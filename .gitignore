@@ -1,0 +1,15 @@
+# 不需要推送的目录
+linux/
+Oppo Connect/
+vm/
+WorkBuddy/
+
+# 依赖包
+node_modules/
+
+# AI 工作目录
+.workbuddy/
+.codebuddy/
+
+# 环境变量
+.env

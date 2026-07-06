@@ -1,0 +1,46 @@
+<mxfile host="app.diagrams.net" agent="draw.io">
+  <diagram name="库管员用例图" id="warehouse-uc">
+    <mxGraphModel dx="1169" dy="651" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="550" pageHeight="200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="actor" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2C3E50;strokeColor=#1a252f;fontColor=#ffffff;fontSize=12;fontStyle=1;arcSize=12;" value="库管员" vertex="1">
+          <mxGeometry height="36" width="100" x="235" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="u1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ECF0F1;strokeColor=#BDC3C7;fontColor=#2C3E50;fontSize=10;" value="用户登录" vertex="1">
+          <mxGeometry height="30" width="80" x="160" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="u2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ECF0F1;strokeColor=#BDC3C7;fontColor=#2C3E50;fontSize=10;" value="药品入库" vertex="1">
+          <mxGeometry height="30" width="80" x="340" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="u3" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ECF0F1;strokeColor=#BDC3C7;fontColor=#2C3E50;fontSize=10;" value="药品出库" vertex="1">
+          <mxGeometry height="30" width="80" x="160" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="u4" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ECF0F1;strokeColor=#BDC3C7;fontColor=#2C3E50;fontSize=10;" value="库存预警" vertex="1">
+          <mxGeometry height="30" width="80" x="340" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="actor" style="strokeColor=#2C3E50;strokeWidth=1;endArrow=none;endFill=0;" target="u1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="actor" style="strokeColor=#2C3E50;strokeWidth=1;endArrow=none;endFill=0;" target="u3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontColor=#2C3E50;fontStyle=1;" value="图3-5  库管员用例图" vertex="1">
+          <mxGeometry height="16" width="270" x="150" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="GXLYWCAOYVgC5VGLGS9y-4" edge="1" parent="1" source="u2" style="endArrow=none;html=1;rounded=0;" target="actor" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="210" y="220" as="sourcePoint" />
+            <mxPoint x="260" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="GXLYWCAOYVgC5VGLGS9y-5" edge="1" parent="1" source="u4" style="endArrow=none;html=1;rounded=0;" target="actor" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="210" y="220" as="sourcePoint" />
+            <mxPoint x="260" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

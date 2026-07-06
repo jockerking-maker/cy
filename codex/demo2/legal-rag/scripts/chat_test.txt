@@ -1,0 +1,11 @@
+﻿Reply: ### 方法一：简单实现（非原地）
+
+```python
+def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    pivot = arr[0]  # 选择第一个元素作为基准
+    left = []  # 存储小于基准的元素
+    right = []  # 存储大于等于基准的元素
+    for num in arr
+Model: doubao-seed-1-6-flash-250615

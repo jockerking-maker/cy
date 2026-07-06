@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ProjectFlow - 价格方案</title>
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --primary: #2563eb;
+    --primary-light: #3b82f6;
+    --primary-dark: #1d4ed8;
+    --primary-bg: #eff6ff;
+    --accent: #f59e0b;
+    --success: #10b981;
+    --danger: #ef4444;
+    --text: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #94a3b8;
+    --bg: #f8fafc;
+    --bg-alt: #f1f5f9;
+    --card: #ffffff;
+    --border: #e2e8f0;
+    --border-light: #f1f5f9;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+    --shadow: 0 4px 24px rgba(0,0,0,0.06);
+    --shadow-lg: 0 12px 48px rgba(0,0,0,0.1);
+    --shadow-xl: 0 20px 60px rgba(0,0,0,0.12);
+    --radius: 16px;
+    --radius-sm: 10px;
+    --radius-xs: 6px;
+    --font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+    --max-w: 1200px;
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font);
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* --- Header --- */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+  .header-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--text);
+  }
+  .logo-icon {
+    width: 34px;
+    height: 34px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    border-radius: var(--radius-xs);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 800;
+    font-size: 16px;
+  }
+  .logo span { color: var(--primary); }
+  .nav-links {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: var(--transition);
+  }
+  .nav-links a:hover,
+  .nav-links a.active { color: var(--primary); background: var(--primary-bg); }
+  .nav-cta {
+    background: var(--primary) !important;
+    color: #fff !important;
+    padding: 8px 22px !important;
+    border-radius: 8px !important;
+  }
+  .nav-cta:hover { background: var(--primary-dark) !important; }
+  .mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .mobile-toggle span {
+    width: 24px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: var(--transition);
+  }
+
+  /* --- Hero --- */
+  .hero {
+    text-align: center;
+    padding: 80px 24px 40px;
+    background: linear-gradient(180deg, var(--primary-bg) 0%, var(--bg) 100%);
+  }
+  .hero h1 {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    margin-bottom: 16px;
+  }
+  .hero h1 span { color: var(--primary); }
+  .hero p {
+    font-size: 18px;
+    color: var(--text-secondary);
+    max-width: 520px;
+    margin: 0 auto 32px;
+  }
+
+  /* --- Billing Toggle --- */
+  .billing-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+  .billing-toggle label {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition);
+    user-select: none;
+  }
+  .billing-toggle label.active { color: var(--text); }
+  .toggle-switch {
+    position: relative;
+    width: 48px;
+    height: 26px;
+    background: var(--border);
+    border-radius: 13px;
+    cursor: pointer;
+    transition: var(--transition);
+    flex-shrink: 0;
+  }
+  .toggle-switch.active { background: var(--primary); }
+  .toggle-switch::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+    transition: var(--transition);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  }
+  .toggle-switch.active::after { left: 25px; }
+  .save-badge {
+    background: #dbeafe;
+    color: var(--primary-dark);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    opacity: 0;
+    transition: var(--transition);
+  }
+  .save-badge.show { opacity: 1; }
+
+  /* --- Pricing Cards --- */
+  .pricing-grid {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 24px 64px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  .price-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: var(--transition);
+  }
+  .price-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+  }
+  .price-card.featured {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 1px var(--primary), var(--shadow-lg);
+    transform: scale(1.04);
+    z-index: 2;
+  }
+  .price-card.featured:hover { transform: scale(1.04) translateY(-4px); }
+  .badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--primary);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 18px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .plan-name {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .plan-desc {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+  .plan-price {
+    margin-bottom: 24px;
+  }
+  .plan-price .amount {
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+  }
+  .plan-price .amount .yen { font-size: 24px; }
+  .plan-price .period {
+    font-size: 15px;
+    color: var(--text-secondary);
+  }
+  .plan-price .yearly-note {
+    display: none;
+    font-size: 13px;
+    color: var(--success);
+    font-weight: 600;
+    margin-top: 4px;
+  }
+  .plan-price .yearly-note.show { display: block; }
+  .plan-price .custom-text {
+    font-size: 15px;
+    color: var(--text-secondary);
+    margin-top: 4px;
+  }
+  .price-card .features {
+    list-style: none;
+    margin-bottom: 28px;
+    flex: 1;
+  }
+  .price-card .features li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    padding: 6px 0;
+  }
+  .price-card .features li .check {
+    color: var(--success);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .cta-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 13px;
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    border: none;
+    background: var(--bg-alt);
+    color: var(--text);
+    text-decoration: none;
+  }
+  .cta-btn:hover { background: var(--border); }
+  .cta-btn.primary {
+    background: var(--primary);
+    color: #fff;
+  }
+  .cta-btn.primary:hover { background: var(--primary-dark); }
+  .cta-btn.outline {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+  }
+  .cta-btn.outline:hover { background: var(--primary-bg); }
+
+  /* --- Feature Comparison --- */
+  .comparison-section {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 64px 24px;
+  }
+  .comparison-section h2 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  .comparison-section > p {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    font-size: 16px;
+  }
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+  .comparison-table thead th {
+    padding: 16px 14px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    border-bottom: 2px solid var(--border);
+    background: var(--bg);
+  }
+  .comparison-table thead th:first-child {
+    text-align: left;
+    padding-left: 24px;
+    width: 200px;
+    min-width: 160px;
+  }
+  .comparison-table tbody tr { transition: var(--transition); }
+  .comparison-table tbody tr:hover { background: var(--bg); }
+  .comparison-table tbody td {
+    padding: 13px 14px;
+    text-align: center;
+    font-size: 14px;
+    border-bottom: 1px solid var(--border-light);
+  }
+  .comparison-table tbody td:first-child {
+    text-align: left;
+    padding-left: 24px;
+    font-weight: 500;
+  }
+  .comparison-table tbody td.check { color: var(--success); font-weight: 700; }
+  .comparison-table tbody td.cross { color: var(--text-muted); }
+  .comparison-table tbody td.numeric { font-weight: 600; }
+  .category-row td {
+    background: var(--bg-alt) !important;
+    font-weight: 700 !important;
+    font-size: 13px !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 10px 24px !important;
+    color: var(--text-secondary);
+  }
+  .comparison-table tbody td:first-child .check,
+  .comparison-table tbody td:first-child .cross {
+    display: none;
+  }
+
+  /* Comparison mobile horizontal scroll */
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+  .table-wrapper::-webkit-scrollbar { height: 6px; }
+  .table-wrapper::-webkit-scrollbar-track { background: var(--bg); }
+  .table-wrapper::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+  /* --- FAQ --- */
+  .faq-section {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 64px 24px;
+  }
+  .faq-section h2 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 40px;
+  }
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+    padding: 0;
+  }
+  .faq-item:first-child { border-top: 1px solid var(--border); }
+  .faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    text-align: left;
+    gap: 16px;
+    font-family: var(--font);
+    transition: var(--transition);
+  }
+  .faq-question:hover { color: var(--primary); }
+  .faq-question .icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    font-size: 20px;
+    color: var(--text-muted);
+  }
+  .faq-item.open .faq-question .icon { transform: rotate(45deg); color: var(--primary); }
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.35s ease;
+    padding: 0;
+  }
+  .faq-item.open .faq-answer {
+    max-height: 300px;
+    padding: 0 0 20px;
+  }
+  .faq-answer p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  /* --- CTA Banner --- */
+  .cta-banner {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    color: #fff;
+    text-align: center;
+    padding: 72px 24px;
+  }
+  .cta-banner h2 {
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+  }
+  .cta-banner p {
+    font-size: 17px;
+    opacity: 0.85;
+    margin-bottom: 32px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .cta-banner .cta-btn {
+    display: inline-block;
+    width: auto;
+    padding: 14px 40px;
+    background: #fff;
+    color: var(--primary-dark);
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .cta-banner .cta-btn:hover { background: var(--bg); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.2); }
+
+  /* --- Footer --- */
+  footer {
+    background: var(--text);
+    color: #cbd5e1;
+    padding: 48px 24px 32px;
+  }
+  .footer-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+  }
+  .footer-brand .logo { color: #fff; }
+  .footer-brand p {
+    margin-top: 16px;
+    font-size: 14px;
+    line-height: 1.7;
+    max-width: 280px;
+  }
+  .footer-col h4 {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 16px;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 14px;
+    transition: var(--transition);
+  }
+  .footer-col ul li a:hover { color: #fff; }
+  .footer-bottom {
+    max-width: var(--max-w);
+    margin: 32px auto 0;
+    padding-top: 24px;
+    border-top: 1px solid #1e293b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: #64748b;
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: 1024px) {
+    .pricing-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .price-card.featured { transform: scale(1.02); }
+    .price-card.featured:hover { transform: scale(1.02) translateY(-4px); }
+    .footer-inner { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 768px) {
+    .mobile-toggle { display: flex; }
+    .nav-links {
+      position: fixed;
+      top: 68px;
+      left: 0;
+      right: 0;
+      background: #fff;
+      flex-direction: column;
+      padding: 16px 24px;
+      gap: 4px;
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-110%);
+      opacity: 0;
+      transition: var(--transition);
+      pointer-events: none;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-links.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
+    .nav-links a { padding: 12px 16px; }
+    .hero h1 { font-size: 30px; }
+    .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
+    .price-card.featured { transform: none; }
+    .price-card.featured:hover { transform: translateY(-4px); }
+    .comparison-section h2 { font-size: 24px; }
+    .cta-banner h2 { font-size: 26px; }
+    .footer-inner { grid-template-columns: 1fr; gap: 32px; }
+    .footer-bottom { flex-direction: column; gap: 8px; text-align: center; }
+    .billing-toggle { gap: 12px; }
+  }
+  @media (max-width: 480px) {
+    .hero { padding: 48px 16px 32px; }
+    .hero h1 { font-size: 26px; }
+    .pricing-grid { padding: 0 16px 40px; }
+    .price-card { padding: 24px 20px; }
+    .plan-price .amount { font-size: 32px; }
+    .comparison-section { padding: 40px 16px; }
+    .faq-section { padding: 40px 16px; }
+    .cta-banner { padding: 48px 16px; }
+    .cta-banner h2 { font-size: 22px; }
+  }
+
+  /* Smooth scroll padding */
+  #pricing { scroll-margin-top: 80px; }
+  #features { scroll-margin-top: 80px; }
+  #about { scroll-margin-top: 80px; }
+  #faq { scroll-margin-top: 80px; }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">PF</div>
+      Project<span>Flow</span>
+    </a>
+    <button class="mobile-toggle" onclick="toggleMobileNav()" aria-label="切换菜单">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#features" onclick="closeMobileNav()">功能</a></li>
+      <li><a href="#pricing" class="active" onclick="closeMobileNav()">价格</a></li>
+      <li><a href="#about" onclick="closeMobileNav()">关于我们</a></li>
+      <li><a href="#" class="nav-cta" onclick="closeMobileNav()">免费开始</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <h1>选择适合你的 <span>方案</span></h1>
+  <p>从个人项目到企业协作，总有一套方案满足你的需求。14 天免费试用，无需信用卡。</p>
+
+  <!-- Billing Toggle -->
+  <div class="billing-toggle" id="billingToggle">
+    <label class="active" for="monthlyLabel" id="monthlyLabel">月付</label>
+    <div class="toggle-switch" id="toggleSwitch" role="button" tabindex="0" aria-label="切换年付/月付" onclick="toggleBilling()" onkeydown="if(event.key==='Enter')toggleBilling()"></div>
+    <label for="yearlyLabel" id="yearlyLabel">年付</label>
+    <span class="save-badge" id="saveBadge">省 20%</span>
+  </div>
+</section>
+
+<!-- Pricing Cards -->
+<section id="pricing">
+  <div class="pricing-grid">
+    <!-- 免费版 -->
+    <div class="price-card">
+      <div class="plan-name">免费版</div>
+      <div class="plan-desc">适合个人用户和小型项目试用</div>
+      <div class="plan-price">
+        <div class="amount"><span class="yen">¥</span>0</div>
+        <div class="period">永久免费</div>
+        <div class="yearly-note" id="freeYearly">永久免费</div>
+      </div>
+      <ul class="features">
+        <li><span class="check">&check;</span> 最多 3 个项目</li>
+        <li><span class="check">&check;</span> 1 位团队成员</li>
+        <li><span class="check">&check;</span> 看板视图</li>
+        <li><span class="check">&check;</span> 1GB 存储空间</li>
+        <li><span class="check">&check;</span> 基础任务管理</li>
+      </ul>
+      <a href="#" class="cta-btn outline">立即开始</a>
+    </div>
+
+    <!-- 入门版 -->
+    <div class="price-card">
+      <div class="plan-name">入门版</div>
+      <div class="plan-desc">适合小型团队提升协作效率</div>
+      <div class="plan-price">
+        <div class="amount" id="starterAmount"><span class="yen">¥</span>29</div>
+        <div class="period" id="starterPeriod">/月</div>
+        <div class="yearly-note" id="starterYearly">折合 ¥23 /月，按年付</div>
+      </div>
+      <ul class="features">
+        <li><span class="check">&check;</span> 最多 10 个项目</li>
+        <li><span class="check">&check;</span> 5 位团队成员</li>
+        <li><span class="check">&check;</span> 看板 &amp; 甘特图</li>
+        <li><span class="check">&check;</span> 10GB 存储空间</li>
+        <li><span class="check">&check;</span> 自定义字段</li>
+        <li><span class="check">&check;</span> 基础报表</li>
+      </ul>
+      <a href="#" class="cta-btn">免费试用</a>
+    </div>
+
+    <!-- 专业版 (Featured) -->
+    <div class="price-card featured">
+      <div class="badge">最受欢迎</div>
+      <div class="plan-name">专业版</div>
+      <div class="plan-desc">适合快速成长的团队，解锁全部功能</div>
+      <div class="plan-price">
+        <div class="amount" id="proAmount"><span class="yen">¥</span>79</div>
+        <div class="period" id="proPeriod">/月</div>
+        <div class="yearly-note" id="proYearly">折合 ¥63 /月，按年付</div>
+      </div>
+      <ul class="features">
+        <li><span class="check">&check;</span> 不限项目数量</li>
+        <li><span class="check">&check;</span> 20 位团队成员</li>
+        <li><span class="check">&check;</span> 全部视图（看板/甘特图/日历）</li>
+        <li><span class="check">&check;</span> 50GB 存储空间</li>
+        <li><span class="check">&check;</span> 自动化规则</li>
+        <li><span class="check">&check;</span> 高级报表 &amp; 仪表盘</li>
+        <li><span class="check">&check;</span> API 访问</li>
+      </ul>
+      <a href="#" class="cta-btn primary">免费试用</a>
+    </div>
+
+    <!-- 企业版 -->
+    <div class="price-card">
+      <div class="plan-name">企业版</div>
+      <div class="plan-desc">专为大型组织的复杂需求设计</div>
+      <div class="plan-price">
+        <div class="amount" id="enterpriseAmount"><span class="yen">¥</span>定制</div>
+        <div class="period"></div>
+        <div class="custom-text">按需定价，灵活扩展</div>
+      </div>
+      <ul class="features">
+        <li><span class="check">&check;</span> 不限项目数量</li>
+        <li><span class="check">&check;</span> 不限团队成员</li>
+        <li><span class="check">&check;</span> 全部功能无限制</li>
+        <li><span class="check">&check;</span> 专属存储方案</li>
+        <li><span class="check">&check;</span> SSO 单点登录</li>
+        <li><span class="check">&check;</span> SLA 保障 &amp; 专属客服</li>
+      </ul>
+      <a href="#" class="cta-btn">联系我们</a>
+    </div>
+  </div>
+</section>
+
+<!-- Feature Comparison Matrix -->
+<section class="comparison-section" id="features">
+  <h2>功能完整对比</h2>
+  <p>详细了解每个方案包含的功能模块，选择最适合你的组合</p>
+  <div class="table-wrapper">
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>功能</th>
+          <th>免费版</th>
+          <th>入门版</th>
+          <th>专业版</th>
+          <th>企业版</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- 核心功能 -->
+        <tr class="category-row"><td colspan="5">核心功能</td></tr>
+        <tr><td>项目管理</td><td class="check">&check;</td><td class="check">&check;</td><td class="check">&check;</td><td class="check">&check;</td></tr>
+        <tr><td>看板视图</td><td class="check">&check;</td><td class="check">&check;</td><td class="check">&check;</td><td class="check">&check;</td></tr>
+        <tr><td>甘特图</td><td class="cross">&mdash;</td><td class="check">&check;</td><td class="check">&check;</td><td class="check">&check;</td></tr>
+        <tr><td>日历视图</td><td class="cross">&mdash;</td><td class="cross">&mdash;</td><td class="check">&check;</td><td class="check">&check;</td></tr>
+        <tr><td>任务依赖关系</td><td class="cross">&mdash;</td><td class="check">&check;</td><td class="check">&check;</td><td class="check">&check;</td></tr>
+        <tr><td>自动化规则</td><td class="cross">&mdash;</td><td class="cross">&mdash;</td><td class="check">&check;</td><td class="check">&check;</td></tr>
+        <tr><td>自定义字段</td><td class="cross">&mdash;</td><td class="check">&check;</td><td class="check">&check;</td><td class="check">&check;</td></tr>
+        <tr><td>模板库</td><td class="check">&check;</td><td class="check">&check;</td><td class="check">&check;</td><td class="check">&check;</td></tr>
+
+        <!-- 协作功能 -->
+        <tr class="category-row"><td colspan="5">协作功能</td></tr>
+        <tr><td>团队成员数</td><td class="numeric">1 人</td><td class="numeric">5 人</td><td class="numeric">20 人</td><td class="numeric">不限</td></tr>
+        <tr><td>项目数</td><td class="numeric">3 个</td><td class="numeric">10 个</td><td class="numeric">不限</td><td class="numeric">不限</td></tr>
+        <tr><td>实时编辑</td><td class="cross">&mdash;</td><td class="check">&check;</td><td class="check">&check;</td><td class="check">&check;</td></tr>
+        <tr><td>文件共享</td><td class="check">&check;</td><td class="check">&check;</td><td class="check">&check;</td><td class="check">&check;</td></tr>
+        <tr><td>评论与 @提及</td><td class="check">&check;</td><td class="check">&check;</td><td class="check">&check;</td><td class="check">&check;</td></tr>
+        <tr><td>共享日历</td><td class="cross">&mdash;</td><td class="check">&check;</td><td class="check">&check;</td><td class="check">&check;</td></tr>
+        <tr><td>外部协作者</td><td class="cross">&mdash;</td><td class="cross">&mdash;</td><td class="check">&check;</td><td class="check">&check;</td></tr>
+
+        <!-- 数据分析 -->
+        <tr class="category-row"><td colspan="5">数据分析</td></tr>
+        <tr><td>数据仪表盘</td><td class="cross">&mdash;</td><td class="cross">&mdash;</td><td class="check">&check;</td><td class="check">&check;</td></tr>
+        <tr><td>自定义报表</td><td class="cross">&mdash;</td><td class="check">&check;</td><td class="check">&check;</td><td class="check">&check;</td></tr>
+        <tr><td>时间追踪</td><td class="check">&check;</td><td class="check">&check;</td><td class="check">&check;</td><td class="check">&check;</td></tr>
+        <tr><td>资源负载图</td><td class="cross">&mdash;</td><td class="cross">&mdash;</td><td class="check">&check;</td><td class="check">&check;</td></tr>
+        <tr><td>API 访问</td><td class="cross">&mdash;</td><td class="check">&check;</td><td class="check">&check;</td><td class="check">&check;</td></tr>
+        <tr><td>数据导出</td><td class="check">&check;</td><td class="check">&check;</td><td class="check">&check;</td><td class="check">&check;</td></tr>
+
+        <!-- 技术支持 -->
+        <tr class="category-row"><td colspan="5">技术支持</td></tr>
+        <tr><td>在线客服</td><td class="check">工单</td><td class="check">工作时间</td><td class="check">优先</td><td class="check">专属</td></tr>
+        <tr><td>培训资源</td><td class="check">基础</td><td class="check">基础</td><td class="check">高级</td><td class="check">全套</td></tr>
+        <tr><td>SLA 保障</td><td class="cross">&mdash;</td><td class="cross">&mdash;</td><td class="check">99.9%</td><td class="check">99.99%</td></tr>
+        <tr><td>SSO 单点登录</td><td class="cross">&mdash;</td><td class="cross">&mdash;</td><td class="check">&check;</td><td class="check">&check;</td></tr>
+        <tr><td>专属客户经理</td><td class="cross">&mdash;</td><td class="cross">&mdash;</td><td class="cross">&mdash;</td><td class="check">&check;</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <h2>常见问题</h2>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      免费版有使用期限吗？
+      <span class="icon">+</span>
+    </button>
+    <div class="faq-answer"><p>免费版没有时间限制，你可以永久免费使用。免费版包含 3 个项目、1 位用户和 1GB 存储空间，适合个人用户和项目试用。</p></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      年付方案可以节省多少？
+      <span class="icon">+</span>
+    </button>
+    <div class="faq-answer"><p>年付方案享受 20% 折扣。以专业版为例，月付 ¥79/月，年付仅需 ¥63/月（按年一次性支付 ¥756），每年节省 ¥288。</p></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      我可以随时升级或降级方案吗？
+      <span class="icon">+</span>
+    </button>
+    <div class="faq-answer"><p>可以。你可以随时在后台切换方案。升级即时生效，按比例计算差价；降级会在当前计费周期结束后生效，已付费部分不受影响。</p></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      专业版与入门版的主要区别是什么？
+      <span class="icon">+</span>
+    </button>
+    <div class="faq-answer"><p>专业版相比入门版增加了：不限项目数（入门版限 10 个）、20 位成员（入门版 5 位）、自动化规则、数据仪表盘、日历视图、资源负载图、外部协作者和 SSO 登录等高级功能。同时享有优先客服支持和 99.9% SLA 保障。</p></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      教育或非营利组织有优惠吗？
+      <span class="icon">+</span>
+    </button>
+    <div class="faq-answer"><p>是的。经过认证的教育机构和非营利组织可享受专业版 50% 折扣。请通过客服提交相关证明材料，审核通过后即可享受优惠价格。</p></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      企业版如何定价？
+      <span class="icon">+</span>
+    </button>
+    <div class="faq-answer"><p>企业版采用定制化定价，价格根据你的团队规模、存储需求、定制功能及 SLA 等级确定。请联系我们的销售团队获取专属报价和免费演示。</p></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      免费试用需要绑定信用卡吗？
+      <span class="icon">+</span>
+    </button>
+    <div class="faq-answer"><p>不需要。所有付费方案均提供 14 天免费试用，无需绑定任何支付方式。试用期内可体验全部付费功能，到期后自动降级为免费版，不会产生任何费用。</p></div>
+  </div>
+
+  <div class="faq-item">
+    <button class="faq-question" onclick="toggleFaq(this)">
+      如果超出方案限制会怎样？
+      <span class="icon">+</span>
+    </button>
+    <div class="faq-answer"><p>当超出方案限制时（如项目数或存储空间），你将收到系统提醒。现有数据不会被删除，但无法继续创建新项目或上传文件。升级到更高方案即可解除限制。</p></div>
+  </div>
+</section>
+
+<!-- CTA Banner -->
+<section class="cta-banner" id="about">
+  <h2>准备好提升团队效率了吗？</h2>
+  <p>加入超过 10,000 个团队，体验 ProjectFlow 带来的高效项目管理。</p>
+  <a href="#" class="cta-btn">免费开始使用</a>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="#" class="logo">
+        <div class="logo-icon">PF</div>
+        Project<span>Flow</span>
+      </a>
+      <p>ProjectFlow 是一款现代化的项目管理工具，帮助团队更高效地协作、追踪和管理项目进度。</p>
+    </div>
+    <div class="footer-col">
+      <h4>产品</h4>
+      <ul>
+        <li><a href="#">功能概览</a></li>
+        <li><a href="#pricing">价格方案</a></li>
+        <li><a href="#">更新日志</a></li>
+        <li><a href="#">API 文档</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>资源</h4>
+      <ul>
+        <li><a href="#">帮助中心</a></li>
+        <li><a href="#">开发者文档</a></li>
+        <li><a href="#">社区论坛</a></li>
+        <li><a href="#">博客</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>公司</h4>
+      <ul>
+        <li><a href="#">关于我们</a></li>
+        <li><a href="#">加入我们</a></li>
+        <li><a href="#">隐私政策</a></li>
+        <li><a href="#">服务条款</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 ProjectFlow. All rights reserved.</span>
+    <span>沪 ICP 备 2024XXXXXX 号</span>
+  </div>
+</footer>
+
+<script>
+  // Mobile Nav
+  function toggleMobileNav() {
+    const nav = document.getElementById('navLinks');
+    nav.classList.toggle('open');
+  }
+  function closeMobileNav() {
+    document.getElementById('navLinks').classList.remove('open');
+  }
+
+  // Billing Toggle
+  let isYearly = false;
+
+  function toggleBilling() {
+    isYearly = !isYearly;
+    const toggle = document.getElementById('toggleSwitch');
+    const badge = document.getElementById('saveBadge');
+    const monthlyLabel = document.getElementById('monthlyLabel');
+    const yearlyLabel = document.getElementById('yearlyLabel');
+
+    toggle.classList.toggle('active', isYearly);
+    badge.classList.toggle('show', isYearly);
+    monthlyLabel.classList.toggle('active', !isYearly);
+    yearlyLabel.classList.toggle('active', isYearly);
+
+    // Update prices
+    const starterAmount = document.getElementById('starterAmount');
+    const starterPeriod = document.getElementById('starterPeriod');
+    const starterYearly = document.getElementById('starterYearly');
+    const proAmount = document.getElementById('proAmount');
+    const proPeriod = document.getElementById('proPeriod');
+    const proYearly = document.getElementById('proYearly');
+    const freeYearly = document.getElementById('freeYearly');
+
+    if (isYearly) {
+      starterAmount.innerHTML = '<span class="yen">¥</span>23';
+      starterPeriod.textContent = '/月';
+      starterYearly.classList.add('show');
+      proAmount.innerHTML = '<span class="yen">¥</span>63';
+      proPeriod.textContent = '/月';
+      proYearly.classList.add('show');
+      freeYearly.classList.add('show');
+    } else {
+      starterAmount.innerHTML = '<span class="yen">¥</span>29';
+      starterPeriod.textContent = '/月';
+      starterYearly.classList.remove('show');
+      proAmount.innerHTML = '<span class="yen">¥</span>79';
+      proPeriod.textContent = '/月';
+      proYearly.classList.remove('show');
+      freeYearly.classList.remove('show');
+    }
+  }
+
+  // FAQ Accordion
+  function toggleFaq(btn) {
+    const item = btn.parentElement;
+    const isOpen = item.classList.contains('open');
+
+    // Close all
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+
+    // Toggle current
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // Active nav highlight on scroll
+  document.addEventListener('DOMContentLoaded', function() {
+    const sections = {
+      features: document.getElementById('features'),
+      pricing: document.getElementById('pricing'),
+      about: document.getElementById('about')
+    };
+    const navLinks = document.querySelectorAll('.nav-links a:not(.nav-cta)');
+
+    function updateNav() {
+      let current = 'pricing';
+      const scrollY = window.scrollY + 120;
+
+      for (const [id, el] of Object.entries(sections)) {
+        if (el && scrollY >= el.offsetTop) current = id;
+      }
+
+      navLinks.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+      });
+    }
+
+    window.addEventListener('scroll', updateNav, { passive: true });
+  });
+</script>
+</body>
+</html>

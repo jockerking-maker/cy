@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: projectflow-backend
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./backend/uploads:/app/uploads
+      - ./backend/data:/app/data
+    environment:
+      - PORT=3001
+      - JWT_SECRET=${JWT_SECRET:-projectflow_jwt_secret_docker}
+      - JWT_EXPIRES_IN=7d
+      - UPLOAD_DIR=./uploads
+      - DB_PATH=./data/projectflow.db
+      - NODE_ENV=production
+    restart: unless-stopped
+    networks:
+      - projectflow-net
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: projectflow-frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+    environment:
+      - VITE_API_BASE_URL=http://localhost:3001/api/v1
+    restart: unless-stopped
+    networks:
+      - projectflow-net
+
+networks:
+  projectflow-net:
+    driver: bridge

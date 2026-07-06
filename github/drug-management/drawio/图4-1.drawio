@@ -1,0 +1,69 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="系统架构分层图" id="QX-c_YiVpbv4MqVsU41A">
+    <mxGraphModel dx="1320" dy="735" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="BPvkupDnHV5lciF399OY-2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontColor=#2C3E50;" value="&lt;b&gt;系统架构分层图&lt;/b&gt;" vertex="1">
+          <mxGeometry height="40" width="400" x="118" y="43" as="geometry" />
+        </mxCell>
+        <mxCell id="BPvkupDnHV5lciF399OY-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;spacing=8;arcSize=8;" value="&lt;b&gt;表现层 (Presentation Layer)&lt;/b&gt;&lt;br&gt;Vue 3 + Element Plus + ECharts + Axios + Pinia" vertex="1">
+          <mxGeometry height="103" width="391" x="122.5" y="84" as="geometry" />
+        </mxCell>
+        <mxCell id="BPvkupDnHV5lciF399OY-4" edge="1" parent="1" source="BPvkupDnHV5lciF399OY-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#7F8C8D;strokeWidth=2;startArrow=classic;startFill=1;endArrow=classic;endFill=1;" target="BPvkupDnHV5lciF399OY-6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BPvkupDnHV5lciF399OY-5" connectable="0" parent="BPvkupDnHV5lciF399OY-4" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#7F8C8D;fillColor=#FFFFFF;strokeColor=#7F8C8D;rounded=1;" value="HTTP / REST" vertex="1">
+          <mxGeometry relative="1" x="-0.5" y="208" as="geometry">
+            <mxPoint x="-208" y="12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BPvkupDnHV5lciF399OY-6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;spacing=8;arcSize=8;" value="&lt;b&gt;接口层 (Interface Layer)&lt;/b&gt;&lt;br&gt;Spring MVC + RESTful API + Controller&lt;br&gt;统一响应: {code, message, data}" vertex="1">
+          <mxGeometry height="97" width="397" x="119.5" y="232" as="geometry" />
+        </mxCell>
+        <mxCell id="BPvkupDnHV5lciF399OY-7" edge="1" parent="1" source="BPvkupDnHV5lciF399OY-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#7F8C8D;strokeWidth=2;startArrow=classic;startFill=1;endArrow=classic;endFill=1;" target="BPvkupDnHV5lciF399OY-9" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BPvkupDnHV5lciF399OY-8" connectable="0" parent="BPvkupDnHV5lciF399OY-7" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#7F8C8D;fillColor=#FFFFFF;strokeColor=#7F8C8D;rounded=1;" value="方法调用" vertex="1">
+          <mxGeometry relative="1" x="-0.5" y="353" as="geometry">
+            <mxPoint x="-353" y="13" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t75M8k520ABj_7Q8bt_C-1" edge="1" parent="1" source="BPvkupDnHV5lciF399OY-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="BPvkupDnHV5lciF399OY-6" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BPvkupDnHV5lciF399OY-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;spacing=8;arcSize=8;" value="&lt;b&gt;业务逻辑层 (Business Logic Layer)&lt;/b&gt;&lt;br&gt;Service + 事务管理 + 业务规则处理&lt;br&gt;入库更新库存 / 出库校验 / 预警检测" vertex="1">
+          <mxGeometry height="91" width="398" x="119" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="BPvkupDnHV5lciF399OY-10" edge="1" parent="1" source="BPvkupDnHV5lciF399OY-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#7F8C8D;strokeWidth=2;startArrow=classic;startFill=1;endArrow=classic;endFill=1;" target="BPvkupDnHV5lciF399OY-12" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BPvkupDnHV5lciF399OY-11" connectable="0" parent="BPvkupDnHV5lciF399OY-10" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#7F8C8D;fillColor=#FFFFFF;strokeColor=#7F8C8D;rounded=1;" value="数据访问" vertex="1">
+          <mxGeometry relative="1" x="-0.5" y="498" as="geometry">
+            <mxPoint x="-498" y="13" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="t75M8k520ABj_7Q8bt_C-2" edge="1" parent="1" source="BPvkupDnHV5lciF399OY-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="BPvkupDnHV5lciF399OY-15" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BPvkupDnHV5lciF399OY-12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;spacing=8;arcSize=8;" value="&lt;b&gt;数据访问层 (Data Access Layer)&lt;/b&gt;&lt;br&gt;MyBatis-Plus + Mapper + CRUD + 条件构造器" vertex="1">
+          <mxGeometry height="97" width="398" x="119" y="522" as="geometry" />
+        </mxCell>
+        <mxCell id="BPvkupDnHV5lciF399OY-13" edge="1" parent="1" source="BPvkupDnHV5lciF399OY-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#7F8C8D;strokeWidth=2;startArrow=classic;startFill=1;endArrow=classic;endFill=1;" target="BPvkupDnHV5lciF399OY-15" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BPvkupDnHV5lciF399OY-14" connectable="0" parent="BPvkupDnHV5lciF399OY-13" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;fontColor=#7F8C8D;fillColor=#FFFFFF;strokeColor=#7F8C8D;rounded=1;" value="SQL" vertex="1">
+          <mxGeometry relative="1" x="-0.5" y="643" as="geometry">
+            <mxPoint x="-643" y="12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BPvkupDnHV5lciF399OY-15" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=13;spacing=8;arcSize=8;" value="&lt;b&gt;数据存储层 (Data Storage Layer)&lt;/b&gt;&lt;br&gt;MySQL 8.0 + 索引优化 + 事务管理" vertex="1">
+          <mxGeometry height="96" width="400" x="118" y="667" as="geometry" />
+        </mxCell>
+        <mxCell id="BPvkupDnHV5lciF399OY-16" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontColor=#7F8C8D;fontStyle=2;" value="▶ 从上到下: 请求流向  |  从下到上: 响应返回" vertex="1">
+          <mxGeometry height="20" width="400" x="114" y="787" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

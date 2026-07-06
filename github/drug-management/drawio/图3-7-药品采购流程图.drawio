@@ -1,0 +1,65 @@
+<mxfile host="app.diagrams.net" agent="draw.io">
+  <diagram name="药品采购流程图" id="purchase-flow">
+    <mxGraphModel dx="1169" dy="651" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="600" pageHeight="460" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="start" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2C3E50;strokeColor=#1a252f;fontColor=#ffffff;fontSize=12;fontStyle=1;arcSize=20;" value="开始" vertex="1">
+          <mxGeometry height="34" width="140" x="200" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#34495E;strokeColor=#2C3E50;fontColor=#ffffff;fontSize=11;arcSize=8;" value="创建采购订单" vertex="1">
+          <mxGeometry height="34" width="150" x="195" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#34495E;strokeColor=#2C3E50;fontColor=#ffffff;fontSize=11;arcSize=8;" value="填写采购信息并提交" vertex="1">
+          <mxGeometry height="34" width="170" x="185" y="145" as="geometry" />
+        </mxCell>
+        <mxCell id="check" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ECF0F1;strokeColor=#BDC3C7;fontColor=#2C3E50;fontSize=11;fontStyle=1;" value="审核员审核" vertex="1">
+          <mxGeometry height="70" width="150" x="195" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#34495E;strokeColor=#2C3E50;fontColor=#ffffff;fontSize=11;arcSize=8;" value="订单生效，生成采购记录" vertex="1">
+          <mxGeometry height="34" width="190" x="175" y="315" as="geometry" />
+        </mxCell>
+        <mxCell id="end" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2C3E50;strokeColor=#1a252f;fontColor=#ffffff;fontSize=12;fontStyle=1;arcSize=20;" value="结束" vertex="1">
+          <mxGeometry height="34" width="140" x="200" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="reject" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ECF0F1;strokeColor=#E74C3C;fontColor=#E74C3C;fontSize=10;arcSize=8;" value="驳回，退回修改" vertex="1">
+          <mxGeometry height="28" width="120" x="410" y="228" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="start" style="strokeColor=#2C3E50;strokeWidth=1.2;endArrow=block;endFill=1;" target="s1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="s1" style="strokeColor=#2C3E50;strokeWidth=1.2;endArrow=block;endFill=1;" target="s2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="s2" style="strokeColor=#2C3E50;strokeWidth=1.2;endArrow=block;endFill=1;" target="check">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="check" style="strokeColor=#2C3E50;strokeWidth=1.2;endArrow=block;endFill=1;" target="s3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4l" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=9;fontColor=#2C3E50;fontStyle=1;" value="通过" vertex="1">
+          <mxGeometry height="14" width="30" x="282" y="283" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="check" style="strokeColor=#2C3E50;strokeWidth=1.2;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="reject">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5l" parent="1" style="text;html=1;strokeColor=none;fillColor=none;fontSize=9;fontColor=#2C3E50;fontStyle=1;" value="驳回" vertex="1">
+          <mxGeometry height="14" width="30" x="363" y="223" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="reject" style="strokeColor=#2C3E50;strokeWidth=1;endArrow=block;endFill=1;dashed=1;" target="s2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="470" y="162" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="s3" style="strokeColor=#2C3E50;strokeWidth=1.2;endArrow=block;endFill=1;" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontColor=#2C3E50;fontStyle=1;" value="图3-7  药品采购流程图" vertex="1">
+          <mxGeometry height="16" width="270" x="150" y="430" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

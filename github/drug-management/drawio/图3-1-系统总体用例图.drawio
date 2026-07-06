@@ -1,0 +1,109 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="系统架构分层图" id="QX-c_YiVpbv4MqVsU41A">
+    <mxGraphModel dx="1705" dy="950" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="2336" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="zOhe-u_SPutEDfZOfrta-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2C3E50;strokeColor=#1a252f;fontColor=#ffffff;fontSize=11;fontStyle=1;arcSize=12;" value="管理员" vertex="1">
+          <mxGeometry height="34" width="100" x="406" y="278" as="geometry" />
+        </mxCell>
+        <mxCell id="zOhe-u_SPutEDfZOfrta-2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ECF0F1;strokeColor=#BDC3C7;fontColor=#2C3E50;fontSize=10;" value="用户管理" vertex="1">
+          <mxGeometry height="30" width="80" x="243" y="403" as="geometry" />
+        </mxCell>
+        <mxCell id="zOhe-u_SPutEDfZOfrta-3" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ECF0F1;strokeColor=#BDC3C7;fontColor=#2C3E50;fontSize=10;" value="角色权限管理" vertex="1">
+          <mxGeometry height="30" width="100" x="356" y="403" as="geometry" />
+        </mxCell>
+        <mxCell id="zOhe-u_SPutEDfZOfrta-4" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ECF0F1;strokeColor=#BDC3C7;fontColor=#2C3E50;fontSize=10;" value="系统通知管理" vertex="1">
+          <mxGeometry height="30" width="100" x="467" y="403" as="geometry" />
+        </mxCell>
+        <mxCell id="zOhe-u_SPutEDfZOfrta-5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2C3E50;strokeColor=#1a252f;fontColor=#ffffff;fontSize=11;fontStyle=1;arcSize=12;" value="采购员" vertex="1">
+          <mxGeometry height="34" width="100" x="632" y="278" as="geometry" />
+        </mxCell>
+        <mxCell id="zOhe-u_SPutEDfZOfrta-6" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ECF0F1;strokeColor=#BDC3C7;fontColor=#2C3E50;fontSize=10;" value="采购订单管理" vertex="1">
+          <mxGeometry height="30" width="100" x="587" y="403" as="geometry" />
+        </mxCell>
+        <mxCell id="zOhe-u_SPutEDfZOfrta-7" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ECF0F1;strokeColor=#BDC3C7;fontColor=#2C3E50;fontSize=10;" value="供应商管理" vertex="1">
+          <mxGeometry height="30" width="90" x="701" y="403" as="geometry" />
+        </mxCell>
+        <mxCell id="zOhe-u_SPutEDfZOfrta-8" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2C3E50;strokeColor=#1a252f;fontColor=#ffffff;fontSize=11;fontStyle=1;arcSize=12;" value="采购审核员" vertex="1">
+          <mxGeometry height="34" width="100" x="807" y="278" as="geometry" />
+        </mxCell>
+        <mxCell id="zOhe-u_SPutEDfZOfrta-9" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ECF0F1;strokeColor=#BDC3C7;fontColor=#2C3E50;fontSize=10;" value="采购审核" vertex="1">
+          <mxGeometry height="30" width="80" x="827" y="403" as="geometry" />
+        </mxCell>
+        <mxCell id="zOhe-u_SPutEDfZOfrta-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2C3E50;strokeColor=#1a252f;fontColor=#ffffff;fontSize=11;fontStyle=1;arcSize=12;" value="库管员" vertex="1">
+          <mxGeometry height="34" width="100" x="998" y="278" as="geometry" />
+        </mxCell>
+        <mxCell id="zOhe-u_SPutEDfZOfrta-11" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ECF0F1;strokeColor=#BDC3C7;fontColor=#2C3E50;fontSize=10;" value="药品入库" vertex="1">
+          <mxGeometry height="30" width="80" x="944" y="403" as="geometry" />
+        </mxCell>
+        <mxCell id="zOhe-u_SPutEDfZOfrta-12" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ECF0F1;strokeColor=#BDC3C7;fontColor=#2C3E50;fontSize=10;" value="药品出库" vertex="1">
+          <mxGeometry height="30" width="80" x="1046" y="403" as="geometry" />
+        </mxCell>
+        <mxCell id="zOhe-u_SPutEDfZOfrta-13" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ECF0F1;strokeColor=#BDC3C7;fontColor=#2C3E50;fontSize=10;" value="库存预警" vertex="1">
+          <mxGeometry height="30" width="80" x="1143" y="403" as="geometry" />
+        </mxCell>
+        <mxCell id="zOhe-u_SPutEDfZOfrta-14" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ECF0F1;strokeColor=#BDC3C7;fontColor=#2C3E50;fontSize=10;" value="用户登录" vertex="1">
+          <mxGeometry height="30" width="80" x="681" y="148" as="geometry" />
+        </mxCell>
+        <mxCell id="zOhe-u_SPutEDfZOfrta-15" edge="1" parent="1" source="zOhe-u_SPutEDfZOfrta-1" style="strokeColor=#2C3E50;strokeWidth=1;endArrow=none;endFill=0;" target="zOhe-u_SPutEDfZOfrta-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zOhe-u_SPutEDfZOfrta-16" edge="1" parent="1" source="zOhe-u_SPutEDfZOfrta-5" style="strokeColor=#2C3E50;strokeWidth=1;endArrow=none;endFill=0;" target="zOhe-u_SPutEDfZOfrta-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zOhe-u_SPutEDfZOfrta-17" edge="1" parent="1" source="zOhe-u_SPutEDfZOfrta-8" style="strokeColor=#2C3E50;strokeWidth=1;endArrow=none;endFill=0;" target="zOhe-u_SPutEDfZOfrta-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zOhe-u_SPutEDfZOfrta-18" edge="1" parent="1" source="zOhe-u_SPutEDfZOfrta-10" style="strokeColor=#2C3E50;strokeWidth=1;endArrow=none;endFill=0;" target="zOhe-u_SPutEDfZOfrta-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zOhe-u_SPutEDfZOfrta-19" edge="1" parent="1" source="zOhe-u_SPutEDfZOfrta-1" style="strokeColor=#2C3E50;strokeWidth=1;endArrow=none;endFill=0;dashed=1;" target="zOhe-u_SPutEDfZOfrta-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zOhe-u_SPutEDfZOfrta-20" edge="1" parent="1" source="zOhe-u_SPutEDfZOfrta-5" style="strokeColor=#2C3E50;strokeWidth=1;endArrow=none;endFill=0;dashed=1;" target="zOhe-u_SPutEDfZOfrta-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zOhe-u_SPutEDfZOfrta-21" edge="1" parent="1" source="zOhe-u_SPutEDfZOfrta-8" style="strokeColor=#2C3E50;strokeWidth=1;endArrow=none;endFill=0;dashed=1;" target="zOhe-u_SPutEDfZOfrta-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zOhe-u_SPutEDfZOfrta-22" edge="1" parent="1" source="zOhe-u_SPutEDfZOfrta-10" style="strokeColor=#2C3E50;strokeWidth=1;endArrow=none;endFill=0;dashed=1;" target="zOhe-u_SPutEDfZOfrta-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zOhe-u_SPutEDfZOfrta-23" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontColor=#2C3E50;fontStyle=1;" value="图3-1  系统总体用例图" vertex="1">
+          <mxGeometry height="16" width="270" x="619" y="542" as="geometry" />
+        </mxCell>
+        <mxCell id="zOhe-u_SPutEDfZOfrta-29" edge="1" parent="1" source="zOhe-u_SPutEDfZOfrta-5" style="strokeColor=#2C3E50;strokeWidth=1;endArrow=none;endFill=0;exitX=0.653;exitY=0.926;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitPerimeter=0;" target="zOhe-u_SPutEDfZOfrta-7">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="681" y="312" as="sourcePoint" />
+            <mxPoint x="758" y="396" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zOhe-u_SPutEDfZOfrta-30" edge="1" parent="1" source="zOhe-u_SPutEDfZOfrta-1" style="strokeColor=#2C3E50;strokeWidth=1;endArrow=none;endFill=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="zOhe-u_SPutEDfZOfrta-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="461" y="318" as="sourcePoint" />
+            <mxPoint x="438" y="402" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zOhe-u_SPutEDfZOfrta-31" edge="1" parent="1" style="strokeColor=#2C3E50;strokeWidth=1;endArrow=none;endFill=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.56;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="zOhe-u_SPutEDfZOfrta-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="467" y="307" as="sourcePoint" />
+            <mxPoint x="526" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zOhe-u_SPutEDfZOfrta-32" edge="1" parent="1" source="zOhe-u_SPutEDfZOfrta-10" style="strokeColor=#2C3E50;strokeWidth=1;endArrow=none;endFill=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="zOhe-u_SPutEDfZOfrta-12">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1122" y="363" as="sourcePoint" />
+            <mxPoint x="1099" y="447" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zOhe-u_SPutEDfZOfrta-33" edge="1" parent="1" source="zOhe-u_SPutEDfZOfrta-10" style="strokeColor=#2C3E50;strokeWidth=1;endArrow=none;endFill=0;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="zOhe-u_SPutEDfZOfrta-13">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1167" y="345" as="sourcePoint" />
+            <mxPoint x="1144" y="429" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

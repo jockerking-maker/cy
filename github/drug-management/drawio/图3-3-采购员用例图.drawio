@@ -1,0 +1,37 @@
+<mxfile host="app.diagrams.net" agent="draw.io">
+  <diagram name="采购员用例图" id="purchaser-uc">
+    <mxGraphModel dx="974" dy="543" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="550" pageHeight="200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="actor" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#2C3E50;strokeColor=#1a252f;fontColor=#ffffff;fontSize=12;fontStyle=1;arcSize=12;" value="采购员" vertex="1">
+          <mxGeometry height="36" width="100" x="232" y="76" as="geometry" />
+        </mxCell>
+        <mxCell id="u1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ECF0F1;strokeColor=#BDC3C7;fontColor=#2C3E50;fontSize=10;" value="用户登录" vertex="1">
+          <mxGeometry height="30" width="80" x="242" y="5" as="geometry" />
+        </mxCell>
+        <mxCell id="u2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ECF0F1;strokeColor=#BDC3C7;fontColor=#2C3E50;fontSize=10;" value="采购订单管理" vertex="1">
+          <mxGeometry height="30" width="100" x="159" y="139" as="geometry" />
+        </mxCell>
+        <mxCell id="u3" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ECF0F1;strokeColor=#BDC3C7;fontColor=#2C3E50;fontSize=10;" value="供应商管理" vertex="1">
+          <mxGeometry height="30" width="90" x="337" y="139" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="actor" style="strokeColor=#2C3E50;strokeWidth=1;endArrow=none;endFill=0;" target="u1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="actor" style="strokeColor=#2C3E50;strokeWidth=1;endArrow=none;endFill=0;" target="u3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontColor=#2C3E50;fontStyle=1;" value="图3-3  采购员用例图" vertex="1">
+          <mxGeometry height="16" width="270" x="142" y="177" as="geometry" />
+        </mxCell>
+        <mxCell id="M3b9prIx62Wwmi3ZTHZQ-1" edge="1" parent="1" source="u2" style="strokeColor=#2C3E50;strokeWidth=1;endArrow=none;endFill=0;" target="actor">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="424" y="62" as="sourcePoint" />
+            <mxPoint x="409" y="41" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
