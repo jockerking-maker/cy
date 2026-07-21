@@ -1,15 +1,78 @@
-# 不需要推送的目录
+.git/
+
+.workbuddy/
+.codebuddy/
+.trae-cn/
+.cursor/
+.codex/
+.composer/
+.copilot/
+.claude/
+
+node_modules/
+.conda/
+.venv/
+venv/
+env/
+.m2/
+.gradle/
+
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+.DS_Store
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+secrets/
+
+*.rar
+*.7z
+*.zip
+*.tar.gz
+*.tgz
+
+*.dll
+*.exe
+*.msi
+*.pdb
+*.bin
+*.jed
+*.hpm
+*.ima
+*.efi
+
+*.log
+logs/
+
 linux/
 Oppo Connect/
 vm/
 WorkBuddy/
 
-# 依赖包
-node_modules/
-
-# AI 工作目录
-.workbuddy/
-.codebuddy/
-
-# 环境变量
-.env
+*.tmp
+*.temp
+*.cache
+# ============================================
+# 超过 GitHub 100MB 限制的大文件
+# ============================================
+工作目录/公司资料/公司产品手册/2024 10月朴赛产品手册.pdf

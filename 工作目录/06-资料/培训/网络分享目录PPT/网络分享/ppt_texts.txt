@@ -1,0 +1,8032 @@
+=== 1. 网络基础  ===
+--- slide1.xml ---
+目标
+网络基础知识
+2. 
+网络模型
+3. 
+交换机工作原理
+4. IP
+地址及测试工具
+--- slide10.xml ---
+设备与层的对应关系
+网络层
+传输层
+应用层
+物理层
+数据链路层
+计算机
+防火墙
+路由器
+交换机
+网   卡
+--- slide11.xml ---
+各层间通信
+网络层
+传输层
+应用层
+物理层
+数据链路层
+网络层
+传输层
+应用层
+物理层
+数据链路层
+物
+数
+物
+数
+物
+数
+物
+数
+物
+数
+物
+数
+物
+数
+物
+数
+网
+网
+网
+网
+--- slide12.xml ---
+1.
+以太网
+2.
+以太网
+MAC
+地址
+3.
+以太网帧格式
+4.
+交换机的工作原理
+5.
+交换机以太网接口的工作模式
+ 
+交换机工作原理
+--- slide13.xml ---
+以太网
+以太网工作在数据链路层
+物理层
+物理层
+数据链路层
+数据链路层
+网络层
+网络层
+物理层协议
+数据链路层协议
+网络层协议
+主机
+A
+主机
+B
+以太网
+ 比特（
+Bit
+）
+ 帧（
+Frame
+）
+包
+(Packet
+）
+数据单元
+--- slide14.xml ---
+以太网
+MAC
+地址
+以太网地址用来识别一个以太网上的某个单独的设备或一组设备
+ 
+   例如：
+00
+－
+06
+－
+1b
+－
+e3
+－
+93
+－
+6c          00
+－
+0d
+－
+28
+－
+be
+－
+b6
+－
+42
+IBM
+CISCO
+24
+比特
+（供应商
+标识
+）
+24
+比特
+（供应商对网卡的唯一编号）
+对于目的地址：
+0–
+物理地址（单播地址）
+1–
+逻辑地址（组播地址）
+--- slide15.xml ---
+Ethernet II
+帧格式
+以太网帧格式
+数据链路层封装
+7
+字节
+6
+字节
+6
+字节
+前导码
+目的地址
+源地址
+类型
+数据
+帧校验
+序列
+46
+～
+1500
+字节
+4
+字节
+1
+字
+节
+2
+字
+节
+帧起始定界符
+物理层封装
+用来标识上层协议的类型，例如
+0800H
+表示
+IP
+协议
+--- slide16.xml ---
+交换机的工作原理
+交换机的转发原理
+初始状态
+MAC
+地址学习
+广播未知数据帧
+接收方回应
+交换机实现单播通信
+1
+2
+3
+A
+B
+C
+00-00-00-11-11-11
+00-00-00-22-22-22
+00-00-00-33-33-33
+数据帧
+...11-11
+...22-22
+MAC
+地址
+接口标示
+...
+11-11
+1
+1
+2
+3
+A
+B
+C
+00-00-00-11-11-11
+00-00-00-22-22-22
+00-00-00-33-33-33
+对外面的世界
+我一无所知
+1
+2
+3
+A
+B
+C
+00-00-00-11-11-11
+00-00-00-22-22-22
+00-00-00-33-33-33
+我不知道
+00-00-00-22-22-22
+广播
+MAC
+--- slide17.xml ---
+交换机以太网接口的工作模式
+交换机以太网接口双工模式
+单工
+两个数据站之间只能沿单一方向传输数据
+半双工
+两个数据站之间可以双向数据传输，但不能同时进行
+全双工
+两个数据站之间可双向且同时进行数据传输
+交换机以太网接口速率
+接口连接时进行协商
+协商失败则无法正常通信
+单向传输
+麦克风
+单工
+扬声器
+发时不收
+收时不发
+对讲机
+半双工
+既收又发
+打电话
+全双工
+--- slide18.xml ---
+IP
+地址的组成及分类
+2.
+网络测试工具
+2-1
+ 
+IP
+地址及测试工具
+--- slide19.xml ---
+IP
+地址由两部分组成
+网络部分（
+NETWORK
+）
+主机部分（
+HOST
+）
+举例
+                   
+192.168.0.25
+IP
+地址的组成
+网络部分
+主机部分
+--- slide2.xml ---
+1. 
+网络拓扑结构
+2. WAN 
+与
+LAN
+3. 
+网络常见设备
+网络基础知识
+--- slide20.xml ---
+IP
+地址的分类
+2-1
+IP
+地址分为
+A
+、
+B
+、
+C
+、
+D
+、
+E
+五类，每一类有不同的划分规则
+1~126
+128~191
+192~223
+--- slide21.xml ---
+A
+、
+B
+、
+C
+三类
+IP
+地址的组成
+网络部分（
+NETWORK
+）
+主机部分（
+HOST
+）
+IP
+地址的分类
+2-2
+NETWORK
+HOST
+HOST
+HOST
+NETWORK
+HOST
+HOST
+NETWORK
+NETWORK
+HOST
+NETWORK
+NETWORK
+Class  A
+16bits
+8bits
+Class  B
+Class  C
+24bits
+--- slide22.xml ---
+满足企业用户在内部网络中使用的需求 
+私有地址不能在
+Internet
+上使用 
+私有地址包括
+3
+组
+ 
+A
+类：
+10.0.0.0~10.255.255.255   10.0.1.1 255.255.255.0
+B
+类：
+172.16.0.0~172.31.255.255 
+C
+类：
+192.168.0.0~192.168.255.255
+ 
+私有地址
+--- slide23.xml ---
+ipconfig
+Ping
+Tracert 
+网络测试工具
+2-1
+--- slide24.xml ---
+使用
+ping
+命令诊断网络连接
+ping 127.0.0.1
+验证本地计算机上是否正确地配置了
+TCP/IP
+ping 
+本地计算机的
+IP
+地址
+验证其是否已正确地添加到网络中
+ping
+默认网关的
+IP
+地址
+验证默认网关是否正常工作
+是否可以与本地网络上的主机进行通信
+ping
+远程主机的
+IP
+地址
+验证是否可以通过路由器进行通信
+网络测试工具
+2-2
+--- slide25.xml ---
+谢谢
+--- slide3.xml ---
+星型拓扑
+优点
+易于实现
+易于网络扩展
+易于故障排查
+缺点
+中心节点压力大
+组网成本较高
+网型拓扑
+各个节点至少与其他两个节点相连
+可靠性高、组网成本也高
+网络拓扑结构
+……
+……
+……
+……
+A
+E
+D
+B
+C
+--- slide4.xml ---
+WAN
+范围：几十到几千千米 
+作用
+:
+用于连接
+远距离的计算机网络
+典型应用
+:Internet
+LAN
+范围：
+1km
+左右 
+作用
+:
+用于连接较短
+距离内的计算机
+典型应用
+:
+企业网
+,
+校园网
+WAN 
+与
+LAN
+--- slide5.xml ---
+交换路由设备
+网络安全设备
+防火墙
+VPN
+设备
+无线网络设备
+网络设备生产厂商
+Cisco
+（思科）
+华为
+H3C
+网络常见设备
+Cisco 2800
+系列路由器
+Cisco 3560
+系列交换机
+Cisco 5500
+系列防火墙
+无线网卡和无线路由器等
+--- slide6.xml ---
+OSI
+模型 
+vs TCP/IP
+模型
+2. TCP/IP
+协议族的组成
+3. 
+数据封装过程
+4. 
+设备与层的对应关系
+5. 
+各层间通信
+ 
+网络模型
+--- slide7.xml ---
+网络常见设备
+OSI
+七层模型
+TCP/IP
+四层模型
+TCP/IP
+五层模型
+OSI
+模型 
+vs TCP/IP
+模型
+物理层
+数据链路层
+网络层
+OSI 7
+层模型
+会话层
+表示层
+应用层
+传输层
+网络层
+传输层
+应用层
+物理层
+数据链路层
+TCP/IP 5
+层
+模型
+网络接口层
+网络层
+传输层
+应用层
+TCP/IP 4
+层模型
+--- slide8.xml ---
+TCP/IP
+协议族的组成
+网络层
+传输层
+应用层
+物理层
+数据链路层
+HTTP      FTP      TFTP
+SMTP      SNMP      DNS
+TCP            UDP
+ICMP  IGMP
+IP
+ARP  RARP
+由底层网络定义的协议
+--- slide9.xml ---
+数据封装过程
+网络层
+传输层
+应用层
+物理层
+数据链路层
+上层数据
+上层数据
+上层数据
+上层数据
+TCP
+头部
+TCP
+头部
+IP
+头部
+TCP
+头部
+IP
+头部
+MAC
+头部
+
+=== 10. NAT原理及配置 ===
+--- slide1.xml ---
+理解
+NAT
+的实现方式
+理解
+NAT
+的工作过程
+会配置
+NAT
+会分析并排查各类
+NAT
+故障
+目标
+--- slide10.xml ---
+设置外部端口的
+IP
+地址：
+设置内部端口的
+IP
+地址：
+建立静态地址转换
+Router(config)#interface FastEthernet 0/0
+Router(config-if)#ip address 61.159.62.130 255.255.255.248
+Router(config-if)#no shut
+静态
+NAT
+配置
+4-2
+Router(config)#interface FastEthernet 1/0
+Router(config-if)#ip address 192.168.100.1 255.255.255.0
+Router(config-if)#no shut
+Router(config)#ip nat inside source static 192.168.100.2 61.159.62.130
+Router(config)#ip nat inside source static 192.168.100.3 61.159.62.131
+--- slide11.xml ---
+在内部和外部端口上启用
+NAT
+配置默认路由
+静态
+NAT
+配置
+4-3
+Router(config)#interface FastEthernet 0/0
+Router(config-if)#ip nat outside
+Router(config)#interface FastEthernet 1/0
+Router(config-if)#ip nat inside
+Router(config)#ip route 0.0.0.0 0.0.0.0 61.159.62.129
+--- slide12.xml ---
+静态
+NAT
+配置
+4-4
+Internet
+192.168.100.2
+192.168.100.3
+155.34.2.3
+SA
+192.168.100.2
+SA
+61.159.62.131
+DA
+61.159.62.131
+DA
+192.168.100.2
+NAT
+NAT
+转换表
+协议
+内部用局部
+IP
+地址
+内部用全局
+IP
+地址
+外部用全局
+IP
+地址
+TCP
+192.168.100.2
+61.159.62.131
+155.34.2.3
+TCP
+192.168.100.3
+61.159.62.132
+155.34.2.3
+192.168.100.1
+61.159.62.130
+--- slide13.xml ---
+NAT
+建立
+NAT
+端口映射关系
+配置实例
+NAT
+端口映射
+Router(config)#ip nat inside source static 
+protocol local-ip UDP/TCP-port global-ip UDP/TCP-port
+ [extendable]
+Router(config)#ip nat inside source static tcp 192.168.100.2 80 61.159.62.131 8080 extendable
+Internet
+192.168.100.2
+61.159.62.131
+ 
+8080
+192.168.100.2  
+80
+协议
+内部用局部
+IP
+地址
+内部用全局
+IP
+地址
+外部用全局
+IP
+地址
+TCP
+192.168.100.2:80
+61.159.62.131:8080
+155.34.2.3
+--- slide14.xml ---
+将内部地址
+192.168.100.2
+～
+192.168.100.254
+转换为合法地址
+61.159.62.131
+～
+61.159.62.190
+，以便访问
+Internet
+动态
+NAT
+配置
+3-1
+192.168.100.2
+～
+192.168.100.254/24
+………
+内部网络
+192.168.100.1
+61.159.62.130
+NAT
+内部端口
+NAT
+外部端口
+Internet
+F0/0
+F1/0
+--- slide15.xml ---
+设置外部端口的
+IP
+地址：
+设置内部端口的
+IP
+地址：
+动态
+NAT
+配置
+3-2
+定义访问控制列表
+ 
+定义合法
+IP
+地址池
+实现网络地址转换
+在内部和外部端口上启用
+NAT
+，以及配置默认路由
+与静态
+NAT
+配置相同
+Router(
+config
+)#access-list 1 
+permit 192.168.100.0 
+0.0.0.255
+Router(config)#ip nat pool test0 61.159.62.131 61.159.62.190 netmask 255.255.255.192
+Router(
+config
+)#
+ip
+ 
+nat
+ inside source list 1 pool  test0
+Router(config)#interface FastEthernet 0/0
+Router(config-if)#ip address 61.159.62.130 255.255.255.192
+Router(config-if)#no shut
+Router(config)#interface FastEthernet 1/0
+Router(config-if)#ip address 192.168.100.1 255.255.255.0
+Router(config-if)#no shut
+--- slide16.xml ---
+动态
+NAT
+配置
+3-3
+Internet
+192.168.100.2
+192.168.100.3
+155.34.2.3
+SA
+192.168.100.2
+SA
+61.159.62.131
+DA
+61.159.62.131
+DA
+192.168.100.2
+NAT
+NAT
+转换表
+协议
+内部用局部
+IP
+地址
+内部用全局
+IP
+地址
+外部用全局
+IP
+地址
+TCP
+192.168.100.2
+61.159.62.131
+155.34.2.3
+TCP
+192.168.100.3
+61.159.62.132
+155.34.2.3
+192.168.100.1
+61.159.62.130
+--- slide17.xml ---
+将内部网络地址
+10.1.1.1
+～
+10.1.1.254
+转换为合法的地址
+61.159.62.131/29
+，以便访问
+Internet
+PAT
+配置
+5-1
+10.1.1.2
+～
+10.1.1.254/24
+………
+内部网络
+10.1.1.1
+61.159.62.130
+NAT
+内部端口
+NAT
+外部端口
+Internet
+F0/0
+F1/0
+--- slide18.xml ---
+设置外部端口的
+IP
+地址：
+设置内部端口的
+IP
+地址：
+PAT
+配置
+5-2
+ 
+定义访问控制列表：
+定义合法
+IP
+地址池：
+实现网络地址转换：
+在内部和外部端口上启用
+NAT
+，以及配置默认路由
+与静态
+NAT
+配置相同
+Router(config)#access-list 1 permit 10.1.1.0 0.0.0.255
+Router(config)#ip nat pool onlyone 61.159.62.131 61.159.62.131 netmask 255.255.255.248
+Router(config)#ip nat inside source list 1 pool onlyone overload
+进行端口复用
+Router(config)#interface FastEthernet 0/0
+Router(config-if)#ip address  61.159.62.130 255.255.255.192
+Router(config-if)#no shu
+Router(config)#interface FastEthernet 1/0
+Router(config-if)#ip address  10.1.1.1 255.255.255.0
+Router(config-if)#no shu
+--- slide19.xml ---
+PAT
+配置
+5-3
+Internet
+10.1.1.2
+10.1.1.3
+155.34.2.3
+SA
+10.1.1.2
+SA
+61.159.62.131
+DA
+61.159.62.131
+DA
+10.1.1.2
+NAT
+NAT
+转换表
+协议
+内部用局部
+IP
+地址
+内部用全局
+IP
+地址
+外部用全局
+IP
+地址
+TCP
+10.1.1.2:1028
+61.159.62.131:1028
+155.34.2.3
+TCP
+10.1.1.2:11212
+61.159.62.131:11212
+155.34.2.3
+10.1.1.1
+61.159.62.130
+--- slide2.xml ---
+本章结构
+NAT
+的配置
+NAT
+实现方法的工作过程
+NAT
+的特性
+动态
+NAT
+静态
+NAT
+网络地址转换（
+NAT
+）
+PAT
+NAT
+的概念与实现方式
+NAT
+的故障处理
+NAT
+概述
+验证
+NAT
+的配置
+NAT
+的术语与转换表
+--- slide20.xml ---
+复用路由器外部接口地址
+PAT
+配置
+5-4
+10.1.1.2
+～
+10.1.1.254/24
+………
+内部网络
+动态
+IP
+Internet
+F0/0
+F1/0
+--- slide21.xml ---
+定义内部访问列表
+定义合法的IP地址池
+由于直接使用外部接口地址，所以不再定义IP地址池
+设置复用动态IP地址转换
+在内部和外部端口上启用
+NAT
+，以及配置默认路由
+与静态
+NAT
+配置相同
+PAT
+配置
+5-5
+Router(config)#access-list 1 permit 10.1.1.0 0.0.0.255
+Router(config)#ip nat inside source list 1 interface FastEthernet 0/0 
+                            overload
+外部接口
+--- slide22.xml ---
+请思考：
+企业为什么会在网络边界配置
+NAT
+呢？
+静态
+NAT
+、动态
+NAT
+、
+PAT
+各有何区别？
+什么情况下会使用
+NAT
+端口映射？
+小结
+--- slide23.xml ---
+验证
+NAT
+的配置
+查看
+NAT
+转换条目
+Router# show 
+ip
+ 
+nat
+ translations [verbose]
+verbose
+：显示详细的
+NAT
+转换条目信息
+Router#show
+ 
+ip
+ 
+nat
+ translations 
+Pro      Inside global          Inside local             Outside local            Outside global
+icmp
+ 207.35.18.2:6002    192.168.1.3: 6002    207.35.14.83: 6002    207.35.14.83: 6002
+icmp
+ 207.35.18.2:15488   192.168.1.3: 15488  207.35.14.83: 15488   207.35.14.83: 15488
+icmp
+ 207.35.18.2:14225   192.168.1.2:14225   207.35.14.83:14225    207.35.14.83:14225
+icmp
+ 207.35.18.2:14481   192.168.1.2:14481   207.35.14.83:14481    207.35.14.83:14481
+---            207.35.18.6               192.168.2.2                      ---                            ---
+Router#show
+ 
+ip
+ 
+nat
+ translations verbose 
+Pro   Inside global         Inside local       Outside local         Outside global
+Icmp
+  207.35.18.2:31634  192.168.1.2:31634  207.35.14.83:31634   207.35.14.83:31634
+    create 00:00:14, use 00:00:14 timeout:60000, left 00:00:45, Map-Id(In): 1, 
+    flags: 
+extended, 
+use_count
+: 0, entry-id: 36, 
+lc_entries
+: 0
+---    207.35.18.6        192.168.2.2            ---                   ---
+    create 00:34:40, use 00:27:57 timeout:0, 
+    flags: 
+--- slide24.xml ---
+默认情况下
+UDP
+超时值：
+5
+分钟
+DNS
+超时值：
+1
+分钟
+TCP
+超时值：
+24
+小时
+更改超时时间配置
+NAT
+转换条目超时时间
+Router(config)#ip nat translation { dns-timeout | icmp-timeout | tcp-timeout | udp-timeout }  { 
+seconds 
+| never }
+--- slide25.xml ---
+清除
+NAT
+转换表中的所有条目
+R
+outer#
+clear ip nat translation *
+清除包含内部转换的转换条目
+R
+outer#
+clear ip nat translation inside 
+local-ip global-ip
+清除包含外部转换的转换条目
+R
+outer#
+clear ip nat translation outside 
+local-ip global-i
+p
+清除
+NAT
+转换条目
+静态
+NAT
+条目不会被清除
+--- slide26.xml ---
+常见问题
+ACL
+阻止转换后的流量
+进行地址转换的
+ACL
+不全
+overload
+参数漏配
+不对称路由问题
+动态地址池
+IP
+地址范围配置错误
+动态地址池与静态转换地址重叠
+Inside
+和
+outside
+接口配置错误
+NAT
+的故障处理
+2-1
+--- slide27.xml ---
+NAT
+故障的排除
+检查物理设备和
+NAT
+配置
+通过
+show
+命令查看
+NAT
+的各种信息
+通过
+debug ip nat
+命令跟踪
+NAT
+操作
+NAT
+故障处理
+2-2
+R1#debug 
+ip
+ 
+nat
+ 
+IP NAT debugging is on
+*Mar  1 00:03:56.875: NAT: s=192.168.4.2-&gt;145.52.23.2, d=1.1.1.1 [52225]
+*Mar  1 00:03:57.667: NAT*: s=192.168.4.2-&gt;145.52.23.2, d=1.1.1.1 [52481]
+*Mar  1 00:03:57.811: NAT*: s=1.1.1.1, d=145.52.23.2-&gt;192.168.4.2 [52481]
+s
+＝
+192.168.4.2
+表示源地址是
+192.168.4.2
+d
+＝
+1.1.1.1
+表示目的地址是
+1.1.1.1
+192.168.4.2-&gt;145.52.23.2
+表示将地址
+192.168.4.2
+转换为 
+145.52.23.2 
+--- slide28.xml ---
+本章总结
+NAT
+的配置
+NAT
+实现方法的工作过程
+NAT
+的特性
+动态
+NAT
+静态
+NAT
+网络地址转换（
+NAT
+）
+PAT
+NAT
+的概念与实现方式
+NAT
+的故障处理
+NAT
+概述
+验证
+NAT
+的配置
+NAT
+的术语与转换表
+--- slide29.xml ---
+预习作业
+预习目标
+理解动态路由的基本概念和原理
+理解距离矢量路由协议和链路状态路由协议
+了解有类路由和无类路由
+掌握
+RIP
+协议的基本配置
+预习下一章学生用书，完成预习作业
+动态路由协议的度量有哪些？
+作业
+--- slide3.xml ---
+地址转换出现的背景
+NAT
+的工作原理
+Network Address Translation
+，网络地址转换
+NAT
+实现方式
+静态转换（
+Static Translation
+）
+动态转换（
+Dynamic Translation
+）
+端口多路复用（
+Port Address Translation
+，
+PAT
+）
+NAT
+概述
+--- slide30.xml ---
+需求描述
+要求公司内部服务器
+192.168.2.2
+采用静态
+NAT
+转换为
+145.52.23.6
+将内部网络地址
+192.168.3.0/24
+和
+192.168.4.0/24
+采用
+PAT
+转换为合法的外部地址
+145.52.23.1
+～
+145.52.23.5
+实验：
+配置
+NAT
+实现网络访问
+4-1
+Internet
+服务器区
+VLAN3
+VLAN4
+VLAN2
+NAT
+SW2
+SW3
+SW1
+--- slide31.xml ---
+实现思路
+配置设备的接口地址和静态路由，实现网络互通
+配置静态
+NAT
+，使外网可以访问公司的服务器
+配置
+PAT
+，实现公司内网能够访问
+Internet
+验证配置的正确性
+学员练习（阶段一）
+搭建实验环境
+配置设备的接口地址和静态路由，实现网络互通
+实验：
+配置
+NAT
+实现网络访问
+4-2
+--- slide32.xml ---
+学员练习（阶段二）
+配置静态
+NAT
+，使外网可以访问公司的服务器
+配置
+PAT
+，实现公司内网能够访问
+Internet
+验证配置的正确性
+实验：
+配置
+NAT
+实现网络访问
+4-3
+--- slide33.xml ---
+学员答辩
+讲解实验思路、步骤
+实施过程中的问题分析
+每人或每组控制在
+10
+分钟内
+教员点评
+解决技术难点
+点评学员表现
+实验：
+配置
+NAT
+实现网络访问
+4-4
+--- slide34.xml ---
+谢谢
+--- slide4.xml ---
+NAT
+包含
+4
+类地址
+NAT
+的转换条目
+简单转换条目
+扩展转换条目
+NAT
+的术语与转换表
+NAT
+Internet
+PC
+192.168.1.2
+目的
+IP= 192.168.1.2
+源
+IP= 203.51.23.55
+经过路由器后的包
+目的
+IP=203.51.23.55
+源
+IP=192.168.1.2
+PC
+访问服务器的包
+目的
+IP=125.25.65.3
+源
+IP=203.51.23.55
+服务器返回
+PC
+的包
+203.51.23.55
+目的
+IP=203.51.23.55
+源
+IP=125.25.65.3
+经过路由器后的包
+转换
+转换
+内部
+外部
+内部局部地址
+外部局部地址
+外部全局地址
+内部全局地址
+--- slide5.xml ---
+静态转换和动态转换
+ 
+NAT
+实现方法的工作过程
+2-1
+Internet
+10.1.1.1
+10.1.1.2
+172.20.7.3
+外部主机
+B
+SA
+10.1.1.1
+SA
+202.168.2.2
+DA
+202.168.2.2
+DA
+10.1.1.1
+NAT
+NAT
+转换表
+协议
+内部用局部
+IP
+地址
+内部用全局
+IP
+地址
+外部用全局
+IP
+地址
+TCP
+10.1.1.1
+202.168.2.2
+172.20.7.3:23
+1
+2
+3
+4
+5
+--- slide6.xml ---
+PAT
+NAT
+实现方法的工作过程
+2-2
+Internet
+10.1.1.1
+10.1.1.2
+172.20.7.3
+外部主机
+B
+SA
+10.1.1.1
+SA
+202.168.2.2
+DA
+202.168.2.2
+DA
+10.1.1.1
+NAT
+NAT
+转换表
+协议
+内部用局部
+IP
+地址
+内部用全局
+IP
+地址
+外部用全局
+IP
+地址
+TCP
+10.1.1.1:1492
+202.168.2.2:1492
+172.20.7.3:23
+TCP
+10.1.1.2:1493
+202.168.2.2:1493
+172.20.7.3:80
+1
+2
+3
+4
+5
+--- slide7.xml ---
+NAT
+的优点
+节省公有合法
+IP
+地址
+处理地址
+重叠
+增强灵活性
+安全性
+NAT
+的缺点
+延迟增大
+配置和维护的复杂性
+不支持某些应用
+，
+可以通过静态
+NAT
+映射来避免
+NAT
+的特性
+--- slide8.xml ---
+NAT
+配置步骤
+接口
+IP
+地址配置
+使用访问控制列表定义哪些内部主机能做
+NAT
+决定采用什么公有地址，静态或地址池
+Router(config)#ip nat pool 
+pool-name
+ 
+star-ip
+ 
+end-ip
+ {
+netmask netmask 
+| 
+prefix-length prefix-length
+} [
+type rotary
+]
+指定地址转换映射
+Router(config)#ip nat inside source static 
+local-ip
+ 
+global-ip 
+[extendable]
+Router(config)#ip nat inside source list 
+access-list-number
+  pool 
+pool-name
+ [overload]
+在内部和外部端口上启用
+NAT
+NAT
+的配置
+定义地址池
+静态
+NAT
+地址映射
+动态
+NAT
+或
+PAT
+地址映射
+--- slide9.xml ---
+将内网地址
+192.168.100.2
+、
+192.168.100.3
+静态转换为合法的外部地址
+61.159.62.131
+、
+61.159.62.132
+，以便访问外网或被外网访问
+静态
+NAT
+配置
+4-1
+192.168.100.2
+～
+192.168.100.254/24
+………
+内部网络
+192.168.100.1
+61.159.62.130
+NAT
+内部端口
+NAT
+外部端口
+Internet
+F1/0
+F0/0
+
+=== 11. VPN原理及配置 ===
+--- slide1.xml ---
+能够理解
+IPSec VPN
+和远程访问
+VPN
+的基本原理
+能够配置
+VPN
+实现机密信息在
+Internet
+上安全传输
+目标
+--- slide10.xml ---
+对称加密算法
+DES
+3DES
+AES
+加密算法
+4-1
+Internet
+明文数据“
+m”
+②
+加密函数
+E (
+k
+，
+m) = c
+③
+解密函数
+D (
+k
+，
+c) = m
+明文数据“
+m”
+①
+共享密钥
+k
+密文数据“
+c”
+--- slide11.xml ---
+非对称加密算法的原理
+DH
+算法（
+Diffie-Hellman
+，迪菲
+-
+赫尔曼）
+ 
+加密算法
+4-2
+Internet
+②
+公钥加密
+E (
+p
+，
+m) = c
+③
+私钥解密
+D (
+q
+，
+c) = m
+① 
+将公钥给对方
+明文数据“
+m”
+密文数据“
+c”
+明文数据“
+m”
+私钥始终未在网上传输
+--- slide12.xml ---
+密钥交换
+带外共享
+带内共享
+IKE
+（
+Internet Key Exchange
+）因特网密钥交换协议
+加密算法
+4-3
+Internet
+共享密钥
+key
+Exchange
+--- slide13.xml ---
+问题
+使用对称加密算法，密钥可能被窃听
+使用非对称加密算法，计算复杂，效率太低，影响传输速度
+解决方案  
+通过非对称加密算法加密对称加密算法的密钥
+然后再用对称加密算法加密实际要传输的数据
+加密算法的应用
+4-4
+--- slide14.xml ---
+HMAC
+实现数据完整性验证
+实现身份验证
+数据报文验证 
+数字签名
+Internet
+A
+B
+B
++K1
+加密后的数据“
+d”
+数字签名
+Hash
+算法
+加密后的数据
+数字签名
++K1
+加密后的数据
++K1
+Hash
+算法
+是否
+相同
+如果数据被篡改将无法得到相同的数字签名
+HMAC
+MD5
+SHA
+--- slide15.xml ---
+请思考：
+简述
+VPN
+的连接模式有哪些？区别是什么？
+简述
+VPN
+的类型有哪些？
+简述常见的对称加密算法有哪些？哪种更安全？
+小结
+--- slide16.xml ---
+建立
+IPSec VPN
+连接需要
+3
+个步骤： 
+流量触发
+IPSec 
+建立管理连接
+建立数据连接
+IPSec
+连接
+Internet
+B
+A
+--- slide17.xml ---
+阶段
+1
+的三个任务 
+协商采用何种方式建立管理连接
+通过
+DH
+算法共享密钥信息
+对等体彼此进行身份验证
+ISAKMP/IKE
+阶段
+1
+Internet
+传输集
+A
+……
+…… 
+A
+B
+传输集
+B
+……
+…… 
+比对
+1.
+加密算法
+2.HMAC
+功能
+3.
+设备验证的类型
+4.DH
+密钥组
+5.
+管理连接的生存周期
+预共享密钥
+预共享密钥
+共享密钥
+共享密钥
+DH
+算法
+使用密钥加密用户身份信息
+使用密钥和用户信息通过
+hash
+算法计算数字签名
+对方比对数字签名确认身份
+--- slide18.xml ---
+配置安全策略
+ISAKMP/IKE
+阶段
+1
+的配置
+2-1
+Internet
+Router(config)#crypto isakmp policy 
+priority
+ 
+Router(config-isakmp)#encryption { des | 3des | aes }
+Router(config-isakmp)#hash { sha | md5 } 
+Router(config-isakmp)#authentication pre-share 
+ 
+Router(config-isakmp)#group { 1 | 2 | 5 }
+ 
+Router(config-isakmp)#lifetime 
+seconds
+ 
+指定加密算法
+用于加密和验证阶段
+1
+第
+5
+、
+6
+个数据包
+指定
+hash
+算法
+采用预共享密钥方式
+指定
+DH
+算法的密钥长度
+Router#show crypto isakmp policy
+Protection suite of priority 1
+ 	encryption algorithm:   AES – Advanced Encryption Standard (128 bit keys).
+ 	hash algorithm:         Secure Hash Standard
+ 	authentication method:  Pre-Shared Key
+ 	Diffie-Hellman group:   #2 (1024 bit)
+ 	lifetime:               3600 seconds, no volume limit
+ 	Default protection suite
+ 	encryption algorithm:   DES - Data Encryption Standard (56 bit keysk).
+	hash algorithm:         Secure Hash Standard
+ 	authentication method:  Rivest-Shamir-Adleman Signature
+ 	Diffie-Hellman group:   #1 (768 bit)
+ 	lifetime:               86400 seconds, no volume limit
+配置结果
+默认配置
+--- slide19.xml ---
+配置预共享密钥
+ISAKMP/IKE
+阶段
+1
+的配置
+2-2
+Internet
+Router(config)#crypto isakmp key { 0 | 6 } 
+keystring
+ address 
+peer-address
+ {
+subnet_mask
+}
+ 
+Router#show crypto isakmp key                                   
+Keyring               Hostname/Address                   Preshared Key
+default                 1.1.1.1                                          (encrypted)
+未指定子网掩码时，默认为
+/32
+Router(config)#key config-key password-encrypt
+New key:                                           
+Confirm key:                                     
+Router(config)#password encryption aes
+加密
+show run
+信息的密钥
+key
+设备需支持
+aes
+算法
+密文
+--- slide2.xml ---
+本章结构
+VPN
+技术
+加密算法
+数据报文验证
+IPSec VPN
+原理与配置
+VPN
+的定义
+IPSec VPN
+VPN
+概述
+IPSec
+连接
+ISAKMP/IKE
+阶段
+2
+ISAKMP/IKE
+阶段
+1
+IPSec VPN
+的配置实现
+VPN
+的模式与类型
+--- slide20.xml ---
+ISAKMP/IKE
+阶段
+2
+需要完成的任务
+定义对等体间需要保护何种流量
+定义用来保护数据的安全协议
+定义传输模式
+定义数据连接的生存周期以及密钥刷新的方式
+ISAKMP/IKE
+阶段
+2
+Internet
+A
+B
+vpn
+隧道
+2
+vpn
+隧道
+1
+匹配隧道
+1
+的
+ACL
+匹配隧道
+2
+的
+ACL
+不匹配
+ACL
+的流量
+ACL
+AH
+ESP
+验证
+ESP
+加密
+ah-md5-hmac
+ah-
+sha
+-
+hmac
+esp-md5-hmac
+esp-sha-hmac
+esp-null
+esp-des
+esp-3des
+esp-aes
+ 128
+esp-aes
+--- slide21.xml ---
+安全关联的定义
+整合必要的安全组件用于建立与对等体的
+IPSec
+连接
+阶段
+1
+的
+SA
+是双向连接
+阶段
+2
+的
+SA
+是单向连接
+SA
+的三个要素
+安全参数索引（
+SPI
+）
+安全协议类型
+目的
+IP
+地址
+ISAKMP/IKE
+阶段
+2
+--- slide22.xml ---
+ISAKMP/IKE
+阶段
+2
+的安全协议
+AH
+（认证头协议）
+数据完整性服务
+数据验证
+防止数据回放攻击
+ESP
+（封装安全载荷协议） 
+ESP
+对用户数据实现加密功能
+ESP
+只对
+IP
+数据的有效载荷进行验证，不包括外部的
+IP
+包头
+ISAKMP/IKE
+阶段
+2
+--- slide23.xml ---
+配置
+crypto ACL
+配置阶段
+2
+传输集
+配置连接模式
+ISAKMP/IKE
+阶段
+2
+的配置
+2-1
+Internet
+Router(config)#access-list 
+access-list-number
+ { deny | permit } 
+protocol
+ 
+source source-wildcard destination destination-wildcard
+ 
+使用
+ACL
+定义何种流量被保护
+Router(config)#crypto ipsec transform-set 
+transform_set_name
+ 
+transform1
+[
+transform2
+ [
+transform3
+]
+Router(cfg-crypto-tran)#mode { tunnel | transport }
+ 
+配置阶段
+2
+传输集定义安全协议
+定义传输模式，默认为隧道模式
+--- slide24.xml ---
+配置
+Crypto Map
+ISAKMP/IKE
+阶段
+2
+的配置
+2-2
+Internet
+Router(config)# crypto map 
+map_name seq_num
+ ipsec-isakmp 
+Router(config-crypto-m)# match address ACL_name_or_num 
+Router(config-crypto-m)# set peer { 
+hostname
+ | 
+IP_address
+ } 
+Router(config-crypto-m)# set transform-set 
+transform_set_name1
+ 
+Router(config-crypto-m)# set pfs [ group1 | group2 | group5 ] 
+Router(config-crypto-m)# set security-association lifetime {seconds 
+seconds
+ | kilobytes 
+kilobytes
+}
+Router(config-crypto-m)# set security-association idle-time 
+seconds
+既是序列号，更是优先级
+静态
+crypto
+中必须指定的参数
+阶段
+2
+的
+SA
+的生存周期
+阶段
+2
+的
+SA
+的空闲超时时间
+--- slide25.xml ---
+查看
+IKE
+策略
+查看管理连接
+SA
+的状态
+查看
+IPSec
+传输集
+查看数据连接
+SA
+的状态
+查看
+Crypto Map 
+IPSec VPN
+的验证
+R1#show crypto isakmp policy 
+R1#show crypto isakmp sa 
+R1#show crypto ipsec transform-set 
+R1#show crypto ipsec sa 
+R1#show crypto map 
+--- slide26.xml ---
+某软件公司项目需求
+开发项目小组可以通过
+VPN
+访问总公司开发服务器，但不能访问
+Internet
+分公司的其他客户端可以访问
+Internet
+IPSec VPN
+的配置实现
+--- slide27.xml ---
+谢谢
+--- slide3.xml ---
+广域网存在各种安全隐患
+网上传输的数据有被窃听的风险
+网上传输的数据有被篡改的危险
+通信双方有被冒充的风险
+VPN
+的定义
+2-1
+Internet
+R2
+R1
+--- slide4.xml ---
+VPN
+建立“保护”网络实体之间的通信
+使用加密技术防止数据被窃听
+数据完整性验证防止数据被破坏、篡改
+通过认证机制确认身份，防止数据被截获、回放
+VPN
+的定义
+2-2
+Internet
+vpn
+隧道
+R1
+R2
+--- slide5.xml ---
+传输模式 
+封装模式相对简单，传输效率较高
+IP
+包头未被保护
+VPN
+的连接模式
+2-1
+Internet
+A
+B
+IP
+包头
+有效载荷
+IP
+包头
+VPN
+头
+有效载荷
+VPN
+尾
+IP
+包头
+VPN
+头
+有效载荷
+VPN
+尾
+IP
+包头
+VPN
+头
+IP
+包头
+有效载荷
+--- slide6.xml ---
+隧道模式 
+IP
+包头被保护
+VPN
+的连接模式
+2-2
+新
+IP
+头
+VPN
+头
+IP
+包头
+有效载荷
+VPN
+尾
+新
+IP
+头
+VPN
+头
+Internet
+A
+B
+IP
+包头
+有效载荷
+被保护的
+新
+IP
+头
+VPN
+头
+IP
+包头
+有效载荷
+VPN
+尾
+VPN
+尾
+--- slide7.xml ---
+站点到站点
+VPN
+VPN
+的类型
+2-1
+Internet
+Internet
+--- slide8.xml ---
+远程访问
+VPN
+ 
+VPN
+的类型
+2-2
+Internet
+Internet
+--- slide9.xml ---
+加密算法
+对称加密算法 
+非对称加密算法 
+密钥交换 
+数据报文验证 
+HMAC 
+MD5
+和
+SHA 
+VPN
+技术
+
+=== 2. IP地址和子网掩码 ===
+--- slide1.xml ---
+理解
+IP
+地址和子网掩码的概念
+理解
+IP
+地址的分类
+配置主机
+IP
+地址
+实现路由器互通
+目标
+--- slide10.xml ---
+配置主机的
+IP
+地址
+教员
+演示操作过程
+--- slide11.xml ---
+网络测试工具
+2-1
+ipconfig
+ping
+教员
+演示操作过程
+--- slide12.xml ---
+使用
+ping
+命令诊断网络连接
+ping 127.0.0.1
+验证本地计算机上是否正确地配置了
+TCP/IP
+ping 
+本地计算机的
+IP
+地址
+验证其是否已正确地添加到网络中
+ping
+默认网关的
+IP
+地址
+验证默认网关是否正常工作
+是否可以与本地网络上的主机进行通信
+ping
+远程主机的
+IP
+地址
+验证是否可以通过路由器进行通信
+网络测试工具
+2-2
+--- slide13.xml ---
+      switch(config)#no ip domain-lookup
+switch(config)#line con 0
+switch(config-if)#logging synchronous
+switch(config)#line con 0
+switch(config-if)#exec-timeout 0 0
+空闲一段时间后，重回初始界面的问题
+控制台消息打断输入的处理
+禁用
+DNS
+查询
+设备配置的准备工作
+en
+conf t
+no ip domain-lo
+line con 0
+logg syn
+exec-timeout 0 0
+exit
+教员
+演示操作过程
+--- slide14.xml ---
+Router(config)#interface fastethernet 0/1
+Router(config-if)#ip address 
+ip-address subnet-mask
+Router(config-if)#no shutdown
+Switch(config)#interface vlan 1
+Switch(config-if)#ip address 
+ip-address subnet-mask
+Switch(config-if)#no shutdown
+路由器配置
+IP
+地址
+交换机配置
+IP
+地址
+配置
+IP
+地址
+进入接口
+配置
+IP
+地址
+开启接口
+教员
+演示操作过程
+--- slide15.xml ---
+需求分析
+PC
+通过
+Console
+口进行配置
+配置路由器和交换机实现通信
+配置
+IP
+地址实现通信
+3-1
+F0/0
+F0/1
+--- slide16.xml ---
+Switch(config)#interface vlan 1
+Switch(config-if)#ip address 192.168.1.2 255.255.255.0
+Switch(config-if)#no shutdown
+Router(config)#interface fastethernet 0/1
+Router(config-if)#ip address 192.168.1.1 255.255.255.0
+Router(config-if)#no shutdown
+配置
+IP
+地址实现通信
+3-2
+F0/0
+F0/1
+--- slide17.xml ---
+查看接口状态
+物理层“
+up
+”，数据链路层“
+up
+”
+物理层“
+down
+”，数据链路层“
+down
+”
+物理层“
+administratively down
+”，数据链路层状态“
+down
+”
+配置
+IP
+地址实现通信
+3-3
+Sw1#show int f0/1
+FastEthernet0/1 is up, line protocol is up (connected)
+  Hardware is Fast Ethernet, address is cc00.06c8.f007 (bia cc00.06c8.f007)
+  MTU 1500 bytes, BW 100000 Kbit, DLY 100 usec,
+     reliability 255/255, txload 1/255, rxload 1/255
+两端的接口状态都是“up”就一定能ping通吗
+？
+--- slide18.xml ---
+IP
+地址的概述与应用
+IP
+地址的定义及分类
+子网掩码
+IP
+地址的配置
+配置主机的
+IP
+地址
+路由器的基本配置
+IP
+地址
+测试
+IP
+地址
+设备配置
+的准备工作
+配置
+IP
+地址实现通信
+本章总结
+--- slide19.xml ---
+课堂练习
+课堂练习提问与讲解
+--- slide2.xml ---
+IP
+地址的概述与应用
+IP
+地址的定义及分类
+子网掩码
+IP
+地址的配置
+配置主机的
+IP
+地址
+路由器的基本配置
+IP
+地址
+测试
+IP
+地址
+设备配置的准备工作
+配置
+IP
+地址实现通信
+本章结构
+--- slide20.xml ---
+作业
+课后作业
+必做
+教员填写
+选做
+教员填写
+教员备课时根据班级情况在此添加内容，应区分必做、选做内容，以满足不同层次学员的需求
+--- slide21.xml ---
+预习作业
+预习目标
+了解数据包格式
+理解
+ARP
+协议原理
+理解
+ICMP
+协议原理
+预习下一章学生用书，完成预习作业
+ARP
+协议的作用是什么？
+作业
+--- slide22.xml ---
+两台直连主机的
+IP
+地址分别配置为
+172.16.10.5
+、
+172.16.1.6
+，它们可以通信吗？
+私网地址包括哪些网段？
+查看路由器接口状态的命令是什么？
+考题
+--- slide23.xml ---
+第六章
+ IP
+地址概述与应用
+—— 
+实验部分
+--- slide24.xml ---
+需求描述
+为两台主机配置
+IP
+地址，验证
+IP
+地址是否生效，验证同一网段的两台主机可以互通，不同网段的主机不能直接互通
+实验一：
+配置
+IP
+地址并验证连通性
+2-1
+主机
+A
+主机
+B
+--- slide25.xml ---
+实现思路
+为两台主机配置
+IP
+地址
+主机
+A
+：
+10.0.10.10
+，子网掩码为
+255.255.0.0
+主机
+B
+：
+10.0.11.11
+，子网掩码为
+255.255.0.0
+通过
+ipconfig
+命令验证主机
+IP
+是否生效
+通过
+ping
+命令验证两台主机是否互通
+将子网掩码都改为
+255.255.255.0
+再次使用
+ipconfig
+和
+ping
+命令测试
+学员练习
+实验一：
+配置
+IP
+地址并验证连通性
+2-2
+40
+分钟完成
+--- slide26.xml ---
+共性问题集中讲解
+常见问题及解决办法
+实验案例小结
+共性问题集中讲解
+--- slide27.xml ---
+需求描述
+通过
+Console
+口配置路由器接口
+IP
+地址，实现设备通信
+设备通信正常后，保存配置，将配置文件备份到
+PC
+机
+实验二：配置路由器实现互通
+2-1
+F0/0
+192.168.1.0/24
+R1
+R2
+F0/0
+--- slide28.xml ---
+实现思路
+使用
+ping
+命令验证路由器通信正常
+将配置文件通过复制、粘贴保存到
+文本中
+学员练习
+实验二：配置路由器实现互通
+2-2
+40
+分钟完成
+--- slide29.xml ---
+共性问题集中讲解
+常见问题及解决办法
+实验案例小结
+共性问题集中讲解
+--- slide3.xml ---
+IP
+地址
+主机唯一的标识，保证主机间正常通信 
+一种网络编码，用来确定网络中一个节点
+IP
+地址由
+32
+位二进制（
+32bit
+）组成
+      
+11010010.01001001.10001100.00000110               
+便于记忆
+210.73.140.6 
+--- slide30.xml ---
+谢谢
+--- slide4.xml ---
+IP
+地址由两部分组成
+网络部分（
+NETWORK
+）
+主机部分（
+HOST
+）
+举例
+                   
+192.168.0.25
+IP
+地址的组成
+网络部分
+主机部分
+--- slide5.xml ---
+IP
+地址的分类
+2-1
+IP
+地址分为
+A
+、
+B
+、
+C
+、
+D
+、
+E
+五类，每一类有不同的划分规则
+1~126
+128~191
+192~223
+--- slide6.xml ---
+A
+、
+B
+、
+C
+三类
+IP
+地址的组成
+网络部分（
+NETWORK
+）
+主机部分（
+HOST
+）
+IP
+地址的分类
+2-2
+NETWORK
+HOST
+HOST
+HOST
+NETWORK
+HOST
+HOST
+NETWORK
+NETWORK
+HOST
+NETWORK
+NETWORK
+Class  A
+16bits
+8bits
+Class  B
+Class  C
+24bits
+--- slide7.xml ---
+满足企业用户在内部网络中使用的需求 
+私有地址不能在
+Internet
+上使用 
+私有地址包括
+3
+组
+ 
+A
+类：
+10.0.0.0~10.255.255.255
+B
+类：
+172.16.0.0~172.31.255.255 
+C
+类：
+192.168.0.0~192.168.255.255
+ 
+私有地址
+--- slide8.xml ---
+用来确定
+IP
+的网络地址
+32
+个二进制位
+对应
+IP
+地址的网络部分用
+1
+表示 
+对应
+IP
+地址的主机部分用
+0
+表示
+ 
+IP
+地址和子网掩码作逻辑“与”运算得到网络地址
+0
+和任何数相与都等于
+0
+1
+和任何数相与都等于任何数本身 
+子网掩码
+2-1
+--- slide9.xml ---
+A
+、
+B
+、
+C
+三类地址的默认子网掩码
+A
+类：
+255.0.0.0
+B
+类：
+255.255.0.0
+C
+类：
+255.255.255.0
+子网掩码
+2-2
+
+=== 3. ICMP ARP协议原理 ===
+--- slide1.xml ---
+目标
+了解数据包格式
+理解
+ARP
+协议原理
+理解
+ICMP
+协议原理
+--- slide10.xml ---
+ARP
+原理演示
+需求分析
+对等网的环境
+PC1
+和
+PC2
+第一次通信
+演示步骤
+使用
+ipconfig /all
+查看
+PC1
+和
+PC2
+的
+MAC
+地址
+用“
+arp -a”
+查看
+ARP
+缓存
+在
+PC1
+上
+ping PC2
+后
+,
+再用“
+arp -a”
+查看
+ARP
+缓存表
+PC1
+PC2
+--- slide11.xml ---
+ICMP
+协议
+ICMP
+是一个“错误侦测与回馈机制”，是通过
+IP
+数据包封装的，用来发送错误和控制消息 
+我要去
+XXX
+XXX
+不可达
+--- slide12.xml ---
+ICMP
+协议的封装
+ICMP
+协议属于网络层协议
+ICMP
+数据的封装过程
+IP
+头部
+上层数据（
+ICMP
+报文）
+ICMP
+头部
+ICMP
+数据
+帧头部
+帧尾部
+上层数据
+--- slide13.xml ---
+ping
+命令的基本格式为：
+Ping
+命令的返回信息
+Ping
+命令
+C
+：
+\&gt;ping  [–t] [-l 
+字节数
+] [-a] [-i] IP_Address| target_name
+连通后的应答
+可能是因为没有正确配置网关等参数
+在规定时间内没有收到返回的应答消息
+--- slide14.xml ---
+Ping
+命令的参数
+3-1
+-t 
+参数会一直不停的执行
+ping
+调试故障或需进行持续连通性测试时应用
+Ctrl+C
+可以中断命令
+--- slide15.xml ---
+Ping
+命令的参数
+3-2
+-a 
+参数可以显示主机名称
+--- slide16.xml ---
+Ping
+命令的参数
+3-3
+-l 
+参数可以设定
+ping
+包的大小
+单位为字节
+可用于简单测试通信质量
+--- slide17.xml ---
+谢谢
+--- slide2.xml ---
+网络层协议与应用
+ARP
+协议
+广播与广播域
+ICMP
+协议
+IP
+数据包格式
+ARP
+协议原理
+ICMP
+的主要功能
+ICMP
+的基本使用
+本章结构
+--- slide3.xml ---
+网络层的功能
+定义了基于
+IP
+协议的逻辑地址
+连接不同的媒介类型
+选择数据通过网络的最佳路径
+--- slide4.xml ---
+IP
+数据包格式
+版本（
+4
+）
+首部长度（
+4
+）
+优先级与服务类型（
+8
+）
+总长度（
+16
+）
+标识符（
+16
+）
+标志（
+3
+）
+段偏移量（
+13
+）
+TTL
+（
+8
+）
+协议号（
+8
+）
+首部校验和（
+16
+）
+源地址（
+32
+）
+目标地址（
+32
+）
+可选项
+数据
+20
+字
+节
+版本字段，
+IP v4
+优先级与服务类型，提供
+3
+层的
+QoS
+--- slide5.xml ---
+广播与广播域概述
+广播与广播域
+广播：将广播地址做为目的地址的数据帧
+广播域：网络中能接收到同一个广播所有节点的集合
+MAC
+地址广播
+广播地址为
+FF-FF-FF-FF-FF-FF
+IP
+地址广播
+广播
+MAC
+地址为
+FF-FF-FF-FF-FF-FF
+广播
+IP
+地址为
+IP
+地址网段的广播地址
+A
+B
+C
+A
+B
+C
+--- slide6.xml ---
+ARP
+协议概述
+局域网中主机的通信
+IP
+地址与
+MAC
+地址
+什么是
+ARP
+协议
+Address Resolution Protocol
+，地址解析协议
+将一个已知的
+IP
+地址解析成
+MAC
+地址
+--- slide7.xml ---
+ARP
+协议
+IP
+地址解析为
+MAC
+地址
+PC1
+发送数据给
+PC2
+，查看缓存没有
+PC2
+的
+MAC
+地址
+PC1
+发送
+ARP
+请求消息（广播）
+所有主机收到
+ARP
+请求消息
+PC2
+回复
+ARP
+应答（单播）
+其他主机丢弃
+PC1
+将
+PC2
+的
+MAC
+地址保存到缓存中，发送数据
+PC1
+10.0.0.1
+PC2
+10.0.0.2
+PC3
+10.0.0.3
+PC4
+10.0.0.4
+Internet
+地址
+                    
+物理地址
+              
+类型
+  10.0.0.200               00-1a-64-b1-5a-f2     
+动态
+我需要
+10.0.0.2
+--- slide8.xml ---
+ARP
+相关命令
+2-1
+Windows
+系统中的
+ARP
+命令
+arp -a
+：查看
+ARP
+缓存表
+arp -d
+：清除
+ARP
+缓存
+ARP
+绑定
+教员
+演示操作过程
+--- slide9.xml ---
+ARP
+相关命令
+2-2
+Cisco
+系统中的
+ARP
+命令
+查看
+ARP
+缓存表
+R
+outer
+#show
+ 
+arp
+清除
+ARP
+缓存
+R
+outer
+#clear
+ 
+arp
+-cache
+ARP
+绑定
+Router
+(config
+)#
+arp
+ 
+ip
+-address 
+mac
+-address
+ 
+arpa
+Router(config)#arp 1.1.1.1 0011.1111.1111 arpa
+Router#show arp 
+Protocol  Address     Age (min)   Hardware Addr   Type        Interface
+Internet  1.1.1.1             -              0011.1111.1111    ARPA
+Internet  10.0.0.2           4             001f.cab6.c959    ARPA    FastEthernet0/1
+Internet  10.0.0.1           -              001f.caff.1041      ARPA    FastEthernet0/1
+
+=== 4. 了解路由器组成及产品 ===
+--- slide1.xml ---
+了解路由器的硬件组成
+掌握路由器的启动过程
+恢复路由交换设备的密码
+交换机
+IOS
+备份、恢复、升级
+了解
+Cisco
+路由器、交换机产品体系
+目标
+--- slide10.xml ---
+加密明文密码
+路由器、交换机的密码设置
+4-3
+sw1(config)# 
+service password-encryption
+sw1(config)#enable  password  cisco0
+sw1#show  running-config
+……
+enable password 
+cisco0
+……
+sw1(config)#service password-encryption 
+sw1#show  running-config
+……
+enable password 7 
+13061E01080354
+……
+明文显示
+密文显示
+--- slide11.xml ---
+sw1(config)#enable password cisco0
+sw1(config)#enable secret cisco
+sw1(config)#line console 0
+sw1(config-line)#password benet
+sw1(config-line)#login
+路由器、交换机的密码设置
+4-4
+验证密码配置作用
+User Access Verification
+Password: 
+benet
+sw1&gt;enable
+Password: 
+cisco
+sw1#
+Console
+口密码
+密文特权密码
+--- slide12.xml ---
+路由器密码恢复
+路由器密码恢复的思路
+路由器启动过程中不加载配置文件
+修改配置寄存器的值为
+0x2142
+，启动不加载配置文件
+路由器密码恢复步骤
+启动过程中按
+Ctrl+Breack
+中断
+IOS
+加载
+进入
+ROM Monitor
+模式，修改配置寄存器的值
+正常启动后，用
+startup-config
+覆盖
+running-config
+修改密码，并修改配置寄存器的值
+rommon1&gt;
+confreg 0x2142
+rommon2&gt;reset
+Router#copy startup-config running-config
+Router(config)#enable secret cisco
+Router(config)#config-register 0x2102
+--- slide13.xml ---
+交换机密码恢复的思路
+交换机启动过程中不加载配置文件
+修改配置文件名称，使交换机启动不加载配置文件
+交换机密码恢复步骤
+拔掉交换机的插头，插上电源同时按住
+MODE
+键
+出现“
+switch:
+”提示松开按键，初始化
+Flash
+将
+config.text
+文件改成
+config.old
+，完成后启动交换机
+把配置文件的名字改回来
+手工加载配置文件
+进入配置模式修改密码
+交换机密码恢复
+switch:flash_init
+switch:rename flash:config.text flash:config.old
+switch:boot
+switch# rename flash:config.old flash:config.text
+switch# copy flash:config.text system:running-config
+--- slide14.xml ---
+配置管理
+IP
+地址
+路由器为三层设备，直接配置在接口
+二层设备配置管理
+IP
+地址
+配置
+VTY
+密码
+路由器、交换机远程管理
+2-1
+sw1(config)# interface vlan 1
+sw1(config-if)# ip address 192.168.1.10 255.255.255.0
+sw1(config-if)# no shutdown
+sw1(config)# line vty 0 4
+sw1(config-line)# password cisco 
+sw1(config-line)# login
+管理员主机
+192.168.1.1/24
+管理
+IP
+为
+192.168.1.10/24
+SW1
+--- slide15.xml ---
+通过
+PC
+远程登录设备
+路由器、交换机远程管理
+2-2
+管理员主机
+192.168.1.1/24
+管理
+IP
+为
+192.168.1.10/24
+SW1
+C:\&gt;telnet 192.168.1.10
+User Access Verification
+Password:
+cisco
+sw1&gt; enable
+% No password set
+sw1&gt;
+没有配置特权密码
+sw1(config)#enable secret cisco1
+C:\&gt;telnet 192.168.1.10
+User Access Verification
+Password:
+cisco
+sw1&gt; enable
+Password:
+cisco1
+switch#
+switch# configure terminal 
+Enter configuration commands, one per line. End with CNTL/Z.
+switch(config)#
+远程管理必须配置登录密码和特权密码
+--- slide16.xml ---
+默认网关的配置命令
+配置默认网关
+B
+管理员主机
+管理
+IP
+为
+192.168.1.10
+SW1
+SW2
+管理
+IP
+为
+192.168.2.20
+192.168.1.1/24
+R1
+    192.168.1.254/24
+    192.168.2.254/24
+F0/0
+ F0/1
+需求分析
+管理员主机要能够远程管理所有设备
+在
+SW2
+上配置默认网关
+Switch(config)# ip default-gateway 
+ip-address
+SW2(config)# ip default-gateway 192.168.2.254
+--- slide17.xml ---
+IOS
+简介
+Internetwork Operating System
+，互联网络操作系统
+IOS
+实现的功能
+配置网络设备的地址、协议等参数
+通过控制访问来确保网络的安全
+设置一系列的访问策略
+对设备进行监控、调试等
+路由器、交换机的
+IOS 2-1
+--- slide18.xml ---
+IOS
+命名规则
+命名形式：
+AAAAA-BBBB-CC-DDDD.EE
+AAAAA
+：
+IOS
+所适用的硬件平台
+BBBB
+：
+IOS
+所包含的特性集
+CC
+：
+IOS
+软件的运行方式和压缩格式
+DDDD
+：
+IOS
+软件版本
+EE
+：
+IOS
+文件的后缀
+路由器、交换机的
+IOS 2-2
+c2800nm-ipbase-mz.124-3i.bin
+--- slide19.xml ---
+通过
+TFTP
+服务器升级
+Cisco
+路由器
+IOS
+配置
+TFTP
+服务器
+升级路由器的
+IOS
+备份路由器
+IOS
+升级
+Cisco
+路由器的
+IOS2-1
+192.168.1.2
+F0/0
+192.168.1.1
+Router# copy tftp flash
+Address or name of remote host [] ? 192.168.1.2
+Source filename [] ? c2800nm-ipbase-mz.123-6e.bin
+Destination filename[c2800nm -ipbase-mz.123-6e.bin] ? (
+回车
+)
+TFTP
+服务器
+IP
+地址
+拷贝的源文件名
+拷贝到设备上的文件名
+Router# copy flash tftp
+点击按钮设置
+Cisco TFTP Server
+软件
+填入
+IOS
+文件存放的路径
+--- slide2.xml ---
+路由器、交换机的密码设置与恢复
+基础命令介绍
+设备管理
+路由器的内部组件
+路由器硬件概述
+IOS的备份、恢复和升级
+恢复IOS
+IOS的备份和升级
+Cisco
+路由产品体系
+路由器、
+交换
+机的
+IOS
+Cisco设备简介
+Cisco
+交换
+产品体系
+本章结构
+Cisco路由器的启动过程
+密码设置
+与恢复
+路由器、交换机的远程管理
+--- slide20.xml ---
+通过
+FTP
+服务器升级
+Cisco
+路由器
+IOS
+配置
+FTP
+服务器
+配置
+FTP
+服务器目录
+配置用户名、密码
+在路由器上配置登录
+FTP
+用户名、密码
+升级路由器的
+IOS
+备份路由器
+IOS
+升级
+Cisco
+路由器的
+IOS2-2
+192.168.1.2
+F0/0
+192.168.1.1
+FTP Server
+Router(config)# ip ftp username benet
+Router(config)# ip ftp password cisco
+Router# copy ftp flash
+Address or name of remote host [] ? 192.168.1.2
+Source filename [] ? c2800nm -ipbase-mz.123-6e .bin
+Destination filename[c2800nm -ipbase-mz.123-6e.bin] ? (
+回车
+)
+FTP
+服务器
+IP
+地址
+拷贝的源文件名
+Router# copy ftp flash
+拷贝到设备上的文件名
+--- slide21.xml ---
+IOS
+文件损坏或丢失后，进行
+IOS
+文件恢复
+使用
+Console
+线连接交换机和主机
+加载
+IOS
+失败，初始化
+FLASH
+通过
+Xmodem
+协议传输
+IOS
+文件
+设置超级终端的
+Xmodem
+选项
+超级终端菜单“传送”中，单击“发送文件”
+启动交换机
+IOS
+恢复
+Console
+线
+switch:flash_init
+InitialiaingFlash...
+……
+……
+switch: copy Xmodem: flash: c2960-lanbase-mz.122-35.se5.bin
+Switch:boot
+ 
+选择
+IOS
+文件
+选择
+Xmodem
+最后点击发送
+--- slide22.xml ---
+Cisco
+路由产品体系
+4-1
+XX
+酒店
+XX
+分公司
+XX
+公司
+XX
+武警骨干网
+ISP
+网络
+服务提供商路由设备
+WAN
+汇聚路由器
+企业边界
+&amp;
+分支机构路由器
+XX
+集团核心网
+服务提供商级
+WAN
+汇聚级
+分支公司级
+--- slide23.xml ---
+分支公司级
+一般指中小公司或分支公司的网关路由器
+Cisco 3900
+和
+Cisco 3800
+系列
+Cisco 2900
+和
+Cisco 2800
+系列
+Cisco
+路由产品体系
+4-2
+设备型号
+固化
+LAN
+接口
+接口卡插槽
+网络模块插槽
+QoS
+和
+VPN
+的支持
+Cisco 3825
+2-10/100/1000
+4个HWIC插槽，可支持
+HWIC、WIC、VIC
+及VWIC模块
+2个NME插槽
+支持
+Cisco 3845
+2-10/100/1000
+4个NME插槽
+支持
+Cisco 2821
+2-10/100/1000
+1个NME或NME-X插槽
+支持
+Cisco 2811
+2-10/100
+1个NME插槽
+支持
+Cisco 3800
+系列
+Cisco 2800
+系列
+WIC
+插槽（广域网接口卡）：可以插接各式各样的广域网模块，实现了灵活性组网
+NM插槽
+（
+--- slide24.xml ---
+WAN
+汇聚级
+一般指规模相对较大公司的互联网接口设备
+各个分支机构上层互连设备
+Cisco 7200
+系列、
+Cisco 7300
+系列、
+Cisco 7500
+系列
+Cisco
+路由产品体系
+4-3
+Cisco 7200
+系列
+--- slide25.xml ---
+服务提供商级
+大型集团公司构建城域以太网
+省级
+ISP
+核心设备，大城市城域网出口
+Cisco 7600
+系列、
+Cisco 12000
+系列
+Cisco
+路由产品体系
+4-4
+Cisco 7600
+系列
+Cisco 12000
+系列
+--- slide26.xml ---
+Cisco
+交换产品体系
+3-1
+汇聚层设备
+接入层设备
+核心层设备
+核心层一般是网络的骨干
+汇聚层汇聚各接入层交换机
+接入层用于互连客户端节点
+--- slide27.xml ---
+核心层设备
+Cisco 6500
+系列交换机
+汇聚层设备
+Cisco 4500
+系列交换机
+Cisco 3560
+、
+3750
+系列交换机相对低端的汇聚层设备
+接入层设备
+Cisco 2960
+交换机
+Cisco
+交换产品体系
+3-2
+Cisco 4500
+系列
+Cisco 3500
+系列
+--- slide28.xml ---
+Cisco
+交换产品体系
+3-3
+产品系列号
+设备型号
+背板带宽（
+Gbps
+）
+转发速率（
+Mpps
+）
+端口密度
+机架单元（
+RU
+）
+Cisco 4500系列
+Cisco 4503
+28
+21
+96
+7
+Cisco 4506
+64
+48
+240
+10
+Cisco 4507R
+64
+48
+240
+11
+Cisco 4510R
+96
+72
+3841
+14
+Cisco 3560系列
+Cisco 3560G
+32
+38.7
+24-10/100/1000
+4-1000（SFP）
+1
+Cisco 3560-48TS
+13.1
+48-10/100
+4-1000（SFP）
+Cisco 3560-24TS
+6.6
+24-10/100
+--- slide29.xml ---
+路由器、交换机的密码设置与恢复
+基础命令介绍
+密码设置
+与恢复
+路由器、交换机的远程管理
+设备管理
+路由器的内部组件
+Cisco路由器的启动过程
+路由器硬件概述
+IOS的备份、恢复和升级
+恢复IOS
+IOS的备份和升级
+Cisco
+路由产品体系
+路由器、
+交换
+机的
+IOS
+Cisco设备简介
+Cisco
+交换
+产品体系
+本章总结
+--- slide3.xml ---
+路由器、交换机的硬件
+处理器（
+CPU
+）
+存储器
+RAM
+：随机访问储存器
+ROM
+：只读内存
+Flash
+：闪存
+NVRAM
+：非易失性随机访问存储器
+Configuration Register
+：配置寄存器
+--- slide30.xml ---
+需求描述
+实现管理员主机对交换机和路由器的远程管理
+设备上配置的密码都要被加密
+实现思路
+主机和
+SW1
+不在同一网段，
+SW1
+需要配置默认网关
+远程登录管理需要配置特权密码
+使用
+service password-encryption
+命令对密码加密
+学员练习
+实验一：设备密码配置与远程管理
+管理员主机
+192.168.1.2
+F0/0
+192.168.1.1
+F0/1
+10.0.0.1
+管理
+IP
+为
+10.0.0.2
+SW1
+R1
+--- slide31.xml ---
+共性问题集中讲解
+常见问题及解决办法
+实验案例小结
+共性问题集中讲解
+--- slide32.xml ---
+需求描述
+网络管理员忘记了为路由器和交换机配置的密码
+进行密码恢复
+实现思路
+通过
+Console
+口进行密码恢复
+路由器通过更改配置寄存器恢复密码
+交换机通过更改配置文件名称恢复密码
+学员练习
+实验二：密码恢复
+50
+分钟完成
+管理员主机
+192.168.1.2
+F0/0
+192.168.1.1
+F0/1
+10.0.0.1
+管理
+IP
+为
+10.0.0.2
+SW1
+R1
+--- slide33.xml ---
+共性问题集中讲解
+常见问题及解决办法
+实验案例小结
+共性问题集中讲解
+--- slide34.xml ---
+--- slide35.xml ---
+谢谢
+--- slide4.xml ---
+Cisco
+路由器、交换机的启动过程
+ROM
+Bootstrap
+加电自检并装载引导代码
+TFTP Server
+Flash
+ROM
+Cisco
+Internetwork
+Operating
+System
+发现和装载
+IOS
+软件
+Console
+TFTP Server
+NVRAM
+Configuration
+File
+发现和应用配置文件
+或进入
+Setup
+模式
+RAM
+--- slide5.xml ---
+	--- 
+System Configuration Dialog ---
+Continue with configuration dialog? [yes/no]:yes
+ 
+At any point you may enter a question mark '?' for help.
+Use ctrl-c to abort configuration dialog at any prompt.
+Default settings are in square brackets '[  ]'.
+Router con0 is now available
+Press RETURN to get started.
+Router&gt;
+路由器启动时的输出内容
+Setup
+模式
+命令行模式
+Console
+接口
+COM
+接口
+Console
+线
+--- slide6.xml ---
+查看当前运行配置
+running-config
+运行在
+RAM
+中
+查看保存的配置信息
+startup-config
+保存在
+NVRAM
+中
+基础命令介绍
+2-1
+S
+witch# 
+show running-config
+S
+witch# 
+show startup-config
+sw1#
+sh run
+Building configuration
+……
+Current configuration : 887 bytes
+!
+version 12.4
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname 
+sw1
+!
+boot-start-marker
+boot-end-marker
+!
+--More--
+配置的交换机名称
+命令简写
+当前配置与保存配置有什么
+区别和联系
+呢？
+--- slide7.xml ---
+保存当前配置文件
+或
+将当前运行配置保存为启动加载配置
+删除保存的配置信息
+基础命令介绍
+2-2
+S
+witch# 
+copy running-config startup-config
+S
+witch# 
+write
+S
+witch# 
+copy running-config startup-config
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+确认目的文件名称，默认为
+startup-config
+，此处回车即可
+S
+witch# 
+erase nvram:
+S
+witch
+# 
+erase nvram: 
+Erasing the nvram filesystem will remove all configuration files! Continue? [confirm]
+[OK]
+Erase of nvram: complete
+S
+witch
+#
+sh
+ow
+ star
+tup-config
+startup-config is not present
+确认是否执行操作
+查看保存的配置信息，提示不存在
+--- slide8.xml ---
+路由器、交换机的密码设置
+4-1
+配置
+Console
+口密码
+sw1(config)#line console 0
+sw1(config-line)#password cisco 
+sw1(config-line)#login
+sw1#show running-config
+……
+line con 0
+ 
+password cisco
+ login
+……
+end
+配置的密码
+--- slide9.xml ---
+路由器、交换机的密码设置
+4-2
+配置特权模式密码
+配置明文特权模式密码
+配置密文特权模式密码
+sw1(config)# 
+enable password cisco0
+sw1(config)# 
+enable secret cisco
+sw1# show running-config
+Building configuration...
+version 12.4
+service timestamps debug datetime msec
+service timestamps log datetime msec
+!
+hostname sw1
+!
+enable secret 5 $1$Q0y4$Yw6AnV7NiiMwGmJsuGETo1
+enable password cisco0 
+同时配置时，密文密码生效
+
+=== 5. VLAN的原理及配置 ===
+--- slide1.xml ---
+理解
+VLAN
+的原理
+理解
+Trunk
+的原理
+会配置
+VLAN
+和
+Trunk
+会配置以太网通道
+目标
+--- slide10.xml ---
+将端口加入
+VLAN
+同时将多个端口加入
+VLAN
+还原接口为默认配置状态
+Switch(config)# interface 
+interface-id
+Switch(config-if)# switchport mode access
+Switch(config-if)# switchport access vlan 
+vlan-id
+Switch(config-if)# 
+no
+ switchport access vlan 
+vlan-id
+将端口加入
+VLAN
+进入要配置的端口
+定义二层端口模式
+将端口添加到
+VLAN
+中
+将端口从某个
+VLAN
+中删除
+Switch(config)# interface 
+range
+ f0/1 – 10
+Switch(config-if-range)# switchport access vlan 
+vlan-id
+Switch(config)# default interface 
+interface-id
+--- slide11.xml ---
+查看所有
+VLAN
+的摘要信息
+查看指定
+VLAN
+信息
+验证
+VLAN
+的配置
+Switch# show vlan brief
+Switch# show vlan id 
+vlan-id
+--- slide12.xml ---
+需求描述
+创建
+VLAN 10、20
+、
+30，VLAN 30命名为caiwu
+如图所示将交换机端口添加到
+VLAN
+中
+VLAN
+配置实例
+交换机
+VLAN 10
+VLAN 30
+VLAN 20
+F0/5~F0/10
+F0/16~F0/20
+F0/11~F0/15
+Switch(config)#vlan 10,20
+Switch(config-vlan)#exit 
+Switch(config)#vlan 30
+Switch(config-vlan)#
+name caiwu
+Switch(config-vlan)#exit
+Switch(config)#interface 
+range
+ f0/5 – 10
+Switch(config-if-range)#switchport mode access
+Switch(config-if-range)#
+switchport access vlan 10
+Switch(config-if-range)#exit
+Switch(config)#interface 
+range
+ f0/11 – 15
+Switch(config-if-range)#switchport mode access
+Switch(config-if-range)#
+switchport access vlan 20
+Switch(config-if-range)#exit
+Switch(config)#interface 
+range
+ f0/16 – 20
+Switch(config-if-range)#switchport mode access
+Switch(config-if-range)#
+switchport access vlan 30
+Switch(config-if-range)#end
+Switch#show vlan brief
+VLAN  Name                            Status       Ports
+----       ---------------------------      ---------      -------------------------------
+1          default                          active       Fa0/1, Fa0/2, Fa0/3, Fa0/4
+                                                                   Fa0/21, Fa0/22,Fa0/23, Fa0/24
+10        VLAN0010                    active       Fa0/5, Fa0/6, Fa0/7, Fa0/8
+--- slide13.xml ---
+请思考
+如下图所示，交换机连接
+4
+台电脑，连接到
+1
+、
+2
+、
+3
+、
+4
+端口上，分别属于
+VLAN1
+、
+2
+、
+3
+、
+4
+，请按照要求在交换机上做相应的配置。 
+小结
+Vlan 1
+1
+2
+3
+4
+Vlan 3
+Vlan 2
+Vlan 4
+--- slide14.xml ---
+如何实现交换机之间的
+VLAN
+通信
+为每一个
+VLAN
+提供一条链路？
+Trunk
+的作用
+2-1
+VLAN 30
+VLAN 30
+VLAN 20
+VLAN 20
+VLAN 10
+VLAN 10
+如果有
+100
+个
+VLAN
+怎么办呢？
+--- slide15.xml ---
+如何实现交换机之间的
+VLAN
+通信
+只使用一条链路，且通过标识来区分不同
+VLAN
+的数据
+Trunk
+的作用
+2-2
+VLAN 30
+VLAN 30
+VLAN 20
+VLAN 20
+VLAN 10
+VLAN 10
+接入链路
+中继链路
+交换网络中的链路类型
+接入链路
+中继链路
+--- slide16.xml ---
+交换机给往其他交换机的数据帧打上
+VLAN
+标识
+VLAN
+跨交换机通信过程
+VLAN 30
+VLAN 30
+VLAN 20
+VLAN 20
+VLAN 10
+VLAN 10
+--- slide17.xml ---
+在以太网上实现中继，
+有
+两种封装类型
+ISL
+（
+Cisco
+私有标准）
+IEEE 802.1q
+ISL
+帧格式
+VLAN
+的标识
+DA
+SA
+以太类型
+/
+长度
+数据
+CRC
+26
+字节
+ISL
+头
+4
+字节
+ISL
+尾
+--- slide18.xml ---
+IEEE 802.1q
+工作原理
+IEEE 802.1q
+中继链路
+接入链路
+802.1q 
+标记   
+4
+字节
+VLAN 20
+VLAN 20
+标准以太网帧
+TPID
+Priority
+CFI
+VLAN ID
+TCI
+Data
+DA
+SA
+Type
+CRC
+Data
+DA
+SA
+Type
+CRC
+Tag
+带有
+802.1q
+标记的以太网帧
+IEEE 802.1q
+帧格式
+12bit
+，可标识的
+VLAN ID
+为
+4096
+个
+--- slide19.xml ---
+Native VLAN
+不支持
+VLAN
+的交换机混合部署
+允许交换机从
+Trunk
+端口上转发未被标记的帧
+Cisco Catalyst
+交换机默认
+Native VLAN
+是
+VLAN 1
+Trunk
+端口互联
+Native VLAN
+必须相同
+Native VLAN
+概述
+VLAN 1
+VLAN 1
+VLAN 2
+VLAN 2
+VLAN 3
+VLAN 3
+SW1
+SW2
+802.1q
+主机
+A
+主机
+B
+--- slide2.xml ---
+VLAN Trunk
+静态
+VLAN
+的配置
+Trunk
+概述
+Trunk
+的排错
+虚拟局域网
+VLAN
+VLAN
+的概念及优势
+VLAN
+概述
+配置以太网通道
+本章结构
+VLAN
+的种类
+Trunk
+的配置
+--- slide20.xml ---
+DTP动态中继协议
+Trunk
+的模式
+接入（
+Access
+）  
+干道（
+Trunk
+）
+动态企望（
+Dynamic desirable
+）
+动态自动（
+Dynamic auto
+）   
+非协商（
+Nonegotiate
+） 
+Trunk
+的模式和协商
+Trunk
+模式协商结果
+SW1
+端口模式
+SW2
+端口模式
+SW1
+结果
+SW2
+结果
+trunk
+dynamic auto
+trunk
+trunk
+trunk
+dynamic desirable
+trunk
+trunk
+dynamic auto
+dynamic auto
+access
+access
+dynamic auto
+dynamic desirable
+trunk
+trunk
+dynamic desirable
+dynamic desirable
+trunk
+trunk
+--- slide21.xml ---
+请思考
+什么是
+Trunk
+ 
+Link
+，什么是
+Access Link
+？
+链路两端接口模式分别为：
+ 	
+Trunk
+、
+Access	
+dynamic desirable
+、
+dynamic auto	
+Trunk
+、
+dynamic auto
+	
+试分析上述三种情况交换机间链路类型。
+如果需要与其他厂家的交换机连接配置
+VLAN Trunk,
+需要使用哪种标记方式？
+带有
+VLAN
+标记的数据帧，普通的主机能否正确读出？
+小结
+--- slide22.xml ---
+配置步骤与命令
+进入接口配置模式
+选择封装类型
+将接口配置为
+Trunk
+指定
+Native VLAN
+（可选）
+Trunk
+的配置
+2-1
+Switch(config)#interface 
+interface-id
+Switch(config-if)#switchport trunk encapsulation { isl | dot1q | negotiate }
+Switch(config-if)#switchport mode {dynamic {desirable | auto} | trunk | access}
+Switch(config-if)#switchport trunk native vlan 
+vlan-id
+--- slide23.xml ---
+其他配置
+禁止
+Trunk
+传送某个
+VLAN
+的数据，删除这个
+VLAN
+允许
+Trunk
+传送某个
+VLAN
+的数据，添加这个
+VLAN
+默认允许全部
+VLAN
+的数据通过
+查看接口模式、状态 ：
+Trunk
+的配置
+2-2
+Switch(config-if)#switchport trunk allowed vlan remove 
+vlan-id
+Switch(config-if)#switchport trunk allowed vlan add 
+vlan-id
+     
+Switch#show interface 
+interface-id
+ switchport
+--- slide24.xml ---
+需求描述
+SW1
+和
+SW2
+各创建
+3
+个
+VLAN
+，
+VLAN 1
+、
+2
+、
+3
+；
+交换机端口分配：
+VLAN 1
+：
+F0/1
+～
+F0/3
+；
+VLAN 2
+：
+F0/4
+～
+F0/10
+；
+VLAN 3
+：
+F0/11
+～
+F0/23
+Trunk
+配置实例
+3-1
+VLAN 3
+VLAN 3
+VLAN 2
+VLAN 2
+VLAN 1
+VLAN 1
+F0/24
+F0/24
+SW1
+SW2
+F0/1~F0/3
+F0/1~F0/3
+F0/4~F0/10
+F0/4~F0/10
+--- slide25.xml ---
+查看端口模式、状态
+Trunk
+配置实例
+3-2
+SW1#show interface f0/24 switchport
+Name: Fa0/24
+Switchport: Enabled
+Administrative Mode: 
+trunk
+Operational Mode:
+ trunk
+Administrative Trunking Encapsulation: 
+dot1q
+Operational Trunking Encapsulation: 
+dot1q
+Negotiation of Trunking: On
+Access Mode VLAN: 1 (default)
+Trunking Native Mode VLAN: 1 (default)
+Voice VLAN: none
+Administrative private-vlan host-association: none
+Administrative private-vlan mapping: none
+Operational private-vlan: none
+Trunking VLANs Enabled:
+ ALL
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+Capture VLANs Allowed: ALL
+接口模式配置为
+Trunk
+接口工作模式为
+Trunk
+Trunk
+协议类型为
+802.1q
+Trunk
+可以承载所有的
+VLAN
+--- slide26.xml ---
+Trunk
+链路上移除
+VLAN 2
+查看端口模式、状态
+Trunk
+配置实例
+3-3
+SW1(config)#interface f0/24
+SW1(config-if)#switchport trunk allowed vlan remove 2
+SW1#show interface f0/24 switchport
+Name: Fa0/24
+Switchport: Enabled
+Administrative Mode: trunk
+Operational Mode: trunk
+…………
+Operational private-vlan: none
+Trunking VLANs Enabled: 
+1,3-1005
+Pruning VLANs Enabled: 2-1001
+Capture Mode Disabled
+不允许
+VLAN 2
+数据通过
+--- slide27.xml ---
+Trunk
+链路无法建立
+接口模式
+封装类型
+Native VLAN
+Trunk
+的排错
+F0/24
+F0/1
+F0/2
+F0/2
+F0/1
+F0/24
+PC1
+PC2
+PC3
+PC4
+SW1
+SW2
+SW1
+交换机配置
+interface FastEthernet0/1
+switchport
+ access 
+vlan
+ 2
+switchport
+ mode access
+!
+interface FastEthernet0/2
+switchport
+ access 
+vlan
+ 3
+switchport
+ mode access
+!
+interface FastEthernet0/24 
+switchport
+ mode dynamic auto
+SW2
+交换机配置
+interface FastEthernet0/1
+switchport
+ access 
+vlan
+ 2
+switchport
+ mode access
+!
+--- slide28.xml ---
+EthernetChannel
+－以太通道
+多条线路负载均衡，带宽提高
+容错，当一条线路失效时，其他线路通信，不会丢包
+配置以太网通道
+3-1
+配置为以太通道的接口，必须物理特性相同
+--- slide29.xml ---
+Switch(config)# interface range fastEthernet 0/1 – 2
+Switch(config-if-range)#channel-group 1 mode on
+ 
+Creating a port-channel interface Port-channel 1
+配置接口为以太通道模式
+      
+配置以太网通道
+3-2
+B
+A
+f0/1
+f0/3
+f0/2
+f0/4
+要捆绑在一起的端口
+以太通道的组号
+--- slide3.xml ---
+分割广播域
+物理分割
+逻辑分割
+VLAN
+的优势
+控制广播
+增强网络安全性
+简化网络管理
+广播域
+VLAN 1
+VLAN 2
+广播域
+VLAN
+概述与优势
+广播
+--- slide30.xml ---
+查看以太通道的配置
+配置以太网通道
+3-3
+Switch# show etherchannel 
+1 
+summary
+Flags:  D - down 
+       
+P - in port-channel
+        I - stand-alone s - suspended
+        H - Hot-standby (LACP only)
+        
+R - Layer3      
+S - Layer2
+        
+U - in use
+      
+f - failed to allocate aggregator
+        
+u - unsuitable for bundling
+        w - waiting to be aggregated
+        d - default port
+Number of channel-groups in use: 1
+Number of aggregators:           1
+Group  Port-channel  Protocol    Ports
+------+-------------+-----------+-----------------------------------------------
+1      Po1(
+SU
+)          -        Fa0/23(
+P
+)
+   
+Fa0/24(
+P
+) 
+--- slide31.xml ---
+实验环境
+PC1
+和
+PC3
+属于
+VLAN 2
+，
+PC2
+属于
+VLAN 3
+PC1
+的
+IP
+地址为：
+192.168.0.1/24
+PC2
+的
+IP
+地址为：
+192.168.0.2/24
+PC3
+的
+IP
+地址为：
+192.168.0.3/24
+实验一：
+ 配置
+VLAN2-1
+SW1
+F0/1
+F0/2
+F0/3
+PC2
+PC1
+PC3
+--- slide32.xml ---
+需求分析
+配置
+VLAN
+，并将交换机接口加入
+VLAN
+实现思路
+处于相同
+VLAN
+中的主机能够通信
+处于不同
+VLAN
+中的主机不能通信
+学员练习
+实验一：
+ 配置
+VLAN2-2
+--- slide33.xml ---
+实验环境
+公司网络现状无法满足公司要求
+现有网中广播很多导致网速慢
+各部门间可以互访，存在一定安全问题
+需求描述
+使用
+VLAN
+技术从逻辑将整个网络进行划分
+限制广播报文，增强公司内部一定安全性
+实现思路
+在交换机上划分
+VLAN
+，将端口添加到相应
+VLAN
+中
+配置交换机
+IP
+地址
+验证访问是否正常
+实验二：配置
+Trunk2-1
+--- slide34.xml ---
+学员练习
+按照网络规划和网络拓扑进行配置
+实验二：配置
+Trunk2-2
+F0/2
+F0/1
+F0/1
+F0/2
+PC1
+PC2
+PC5
+PC6
+SW1
+SW3
+F0/2
+F0/1
+PC3
+PC4
+SW2
+F0/14
+F0/14
+F0/15
+F0/15
+--- slide35.xml ---
+谢谢
+--- slide4.xml ---
+VLAN
+的种类
+主机
+A
+主机
+B
+主机
+C
+主机
+D
+交换机
+VLAN
+表
+Port 1
+Port 2
+Port 7
+Port 10
+端 口
+所属
+VLAN
+Port1
+VLAN5
+Port2
+VLAN10
+……
+……
+Port7
+VLAN5
+……
+……
+Port10
+VLAN10
+静态
+VLAN
+基于端口划分静态
+VLAN
+动态
+VLAN
+基于
+MAC
+地址划分动态
+VLAN
+--- slide5.xml ---
+VLAN
+的范围
+静态
+VLAN
+的配置
+2-1
+VLAN ID
+范围
+范围
+用途
+0
+，
+4095
+保留
+仅限系统使用
+用户不能查看和使用这些
+VLAN
+1
+正常
+Cisco
+默认
+VLAN
+用户能够使用该
+VLAN
+，但不能删除它
+2-1001
+正常
+用于以太网的
+VLAN
+用户可以创建、使用和删除这些
+VLAN
+1002-1005
+正常
+用于
+FDDI
+和令牌环的
+Cisco
+默认
+VLAN
+用户不能删除这些
+VLAN
+1006-1024
+保留
+仅限系统使用
+用户不能查看和使用这些
+VLAN
+1025-4094
+扩展
+仅用于以太网
+VLAN
+--- slide6.xml ---
+配置静态
+VLAN
+的步骤
+创建
+VLAN
+将交换机的端口加入到相应的
+VLAN
+中
+验证
+VLAN
+的配置
+静态
+VLAN
+的配置
+2-2
+--- slide7.xml ---
+创建
+VLAN
+有两种方法
+VLAN
+数据库配置模式
+全局配置模式
+创建
+VLAN2-1
+Switch(config)#vlan 
+vlan-id
+Switch(config-vlan)#name 
+vlan-name
+Switch#vlan database
+Switch(vlan)#vlan 
+vlan-id
+ [name 
+vlan-name
+]
+Switch(vlan)#exit
+添加
+VLAN
+并命名，
+如不指定名称
+系统会使用默认名称
+进入
+VLAN
+数据库模式
+保存退出
+添加一个
+VLAN
+给
+VLAN
+命名，
+此命令可选
+--- slide8.xml ---
+创建
+VLAN
+示例
+VLAN
+数据库配置模式创建
+VLAN
+全局配置模式创建
+VLAN
+创建
+VLAN2-2
+Switch#vlan database
+Switch(vlan)#
+vlan 2 name test20
+VLAN 2 added:
+    Name: test20
+Switch(vlan)#
+exit
+APPLY completed.
+Exiting....
+添加
+VLAN2
+，并命名为
+test20
+；
+如果不指定
+VLAN
+名称，交换机自动
+使用默认名称
+VLAN0002
+保存退出
+Switch(config)#
+vlan 2
+Switch(config-vlan)#name test20
+命名为
+test20
+（可选）
+--- slide9.xml ---
+删除
+VLAN
+使用
+no 
+vlan
+ 
+vlan
+-id
+命令删除
+VLAN
+VLAN
+数据库中删除
+VLAN
+全局模式下删除
+VLAN
+删除
+VLAN
+Switch# vlan database
+Switch(vlan)# 
+no vlan 20
+Deleting VLAN 20...
+Switch(vlan)#exit
+APPLY completed.
+Exiting....
+Switch# configure terminal 
+Switch(config)# 
+no vlan 20
+
+=== 6. 三层交换转发原理及Vlan间路由 ===
+--- slide1.xml ---
+理解三层交换转发原理
+会配置三层交换机实现
+VLAN
+间路由
+目标
+--- slide10.xml ---
+在三层交换机上配置的
+VLAN
+接口为虚接口
+虚接口的引入使得应用更加灵活
+虚接口概述
+2-1
+S
+witch
+(config)# interface vlan 
+vlan-id
+--- slide11.xml ---
+三层交换机
+VLAN
+间通信的转发过程
+虚接口概述
+2-2
+Int vlan 10
+Int vlan 20
+端口属于
+vlan 10
+端口属于
+vlan 20
+主机
+A
+vlan 10
+主机
+B
+vlan 20
+主机
+A
+访问主机
+B
+Int vlan 10
+Int vlan 30
+Trunk
+主机
+A
+vlan 10
+主机
+C
+vlan 30
+主机
+B
+vlan 20
+Int vlan 20
+主机
+A
+访问主机
+C
+主机
+B
+访问主机
+C
+--- slide12.xml ---
+请思考：
+CEF
+包含的两个转发信息表分别是什么？
+简述虚接口的作用，以及三层交换机
+VLAN
+间转发过程
+？
+小结
+--- slide13.xml ---
+在三层交换机启用路由功能
+配置虚接口
+的
+IP
+配置路由接口
+三层交换机的配置
+Switch(config)# ip routing
+Switch(config)# interface vlan 
+vlan-id
+Switch(config-if)# ip address 
+ip_address netmask
+Switch(config-if)# no shutdown
+Switch(config-if)# no switchport
+--- slide14.xml ---
+需求描述
+按照图中规划配置实现
+VLAN
+间互通
+三层交换机实现
+VLAN
+互通
+3-1
+Vlan 1
+192.168.1.0/24
+Vlan 2
+192.168.2.0/24
+Vlan 3
+192.168.3.0/24
+SW-3L
+f0/1-10
+f0/11-15
+f0/16-23
+f0/24
+f0/24
+192.168.2.156
+192.168.3.156
+Vlan 1
+：
+192.168.1.1/24
+Vlan 2
+：
+192.168.2.1/24
+Vlan 3
+：
+192.168.3.1/24
+SW-2L
+192.168.1.156
+--- slide15.xml ---
+在
+2
+层交换机上配置
+VLAN
+、
+Trunk
+三层交换机实现
+VLAN
+互通
+3-2
+SW-2L(config)#vlan 2
+SW-2L(config-vlan)#exit
+SW-2L(config)#vlan 3
+SW-2L(config-vlan)#exit
+SW-2L(config)#interface range f0/11 - 15
+SW-2L(config-if-range)#switchport access vlan 2
+SW-2L(config-if-range)#switchport mode access
+SW-2L(config)#interface range f0/16 - 23
+SW-2L(config-if-range)#switchport access vlan 3
+SW-2L(config-if-range)#switchport mode access
+SW-2L(config)#interface f0/24
+SW-2L(config-if)#switchport mode trunk
+配置
+Trunk
+将端口加入
+VLAN
+添加
+VLAN
+配置
+3
+层交换机
+SW-3L(config)#vlan 2
+SW-3L(config-vlan)#exit
+SW-3L(config)#vlan 3
+SW-3L(config-vlan)#exit
+SW-3L(config)#interface fastEthernet 0/24
+SW-3L(config-if)#switchport trunk encapsulation dot1q 
+SW-3L(config-if)#switchport mode trunk 
+添加
+VLAN
+配置
+Trunk
+SW-3L(config)#ip routing
+SW-3L(config)#interface vlan 1
+SW-3L(config-if)#ip address 192.168.1.1 255.255.255.0
+SW-3L(config-if)#no shut
+ 
+SW-3L(config)#interface vlan 2
+SW-3L(config-if)#ip address 192.168.2.1 255.255.255.0
+SW-3L(config-if)#no shut
+--- slide16.xml ---
+在三层交换机上查看路由表
+三层交换机实现
+VLAN
+互通
+3-3
+SW-3L#show ip route
+Codes: C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route
+ 
+Gateway of last resort is not set
+ 
+C    192.168.1.0/24 is directly connected, Vlan1
+C    192.168.2.0/24 is directly connected, Vlan2
+C    192.168.3.0/24 is directly connected, Vlan3
+--- slide17.xml ---
+需求描述
+配置路由实现内网访问路由器及其外网
+在三层交换机上配置路由
+2-1
+Vlan 1
+192.168.1.0/24
+Vlan 2
+192.168.2.0/24
+Vlan 3
+192.168.3.0/24
+SW-3L
+f0/1-10
+f0/11-15
+f0/16-22
+f0/24
+f0/24
+192.168.2.156
+192.168.3.156
+Vlan 1
+：
+192.168.1.1/24
+Vlan 2
+：
+192.168.2.1/24
+Vlan 3
+：
+192.168.3.1/24
+SW-2L
+f0/23
+10.1.1.1/30
+f0/0
+10.1.1.2/30
+192.168.1.156
+Router
+--- slide18.xml ---
+VLAN
+、
+Trunk
+配置
+在三层交换机上配置路由
+在路由器上配置接口和路由
+在三层交换机上配置路由
+2-2
+SW-3L(config)#int f0/23
+SW-3L(config-if)#no switchport 
+SW-3L(config-if)#ip address 10.1.1.1 255.255.255.252
+SW-3L(config)#ip route 0.0.0.0 0.0.0.0 10.1.1.2
+Router(config)#interface f0/0
+Router(config-if)#ip address 10.1.1.2 255.255.255.252
+Router(config-if)#no shutdown
+Router(config-if)#exit
+ 
+Router(config)#ip route 192.168.1.0 255.255.255.0 10.1.1.1
+Router(config)#ip route 192.168.2.0 255.255.255.0 10.1.1.1
+Router(config)#ip route 192.168.3.0 255.255.255.0 10.1.1.1
+配置路由接口，配置
+IP
+地址
+配置默认路由
+在三层交换机上查看路由表
+SW-3L#show ip route
+Codes: C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route
+ 
+Gateway of last resort is 10.1.1.2 to network 0.0.0.0
+ 
+     10.0.0.0/30 is subnetted, 1 subnets
+C    10.1.1.0 is directly connected, FastEthernet0/23
+C    192.168.1.0/24 is directly connected, Vlan1
+C    192.168.2.0/24 is directly connected, Vlan2
+C    192.168.3.0/24 is directly connected, Vlan3
+S*   0.0.0.0/0 [1/0] via 10.1.1.2
+默认路由
+--- slide19.xml ---
+三层交换机配置
+DHCP
+中继
+3-1
+Vlan 2
+192.168.2.0/24
+Vlan 100
+192.168.100.100/24
+Vlan 3
+192.168.3.0/24
+SW-3L
+f0/1-10
+f0/20
+f0/11-15
+f0/24
+f0/24
+Vlan 1
+：
+192.168.1.1/24
+Vlan 2
+：
+192.168.2.1/24
+Vlan 3
+：
+192.168.3.1/24
+SW-2L
+DHCP
+服务器
+DHCP
+中继代理
+ Switch(config-if)# ip helper-address 
+DHCPsrv-IPAddress
+VLAN2
+、
+VLAN3
+通过
+DHCP
+服务器动态获得
+IP
+地址
+DHCP
+中继配置
+--- slide2.xml ---
+本章结构
+三层交换的应用
+三层交换机的配置
+三层交换机配置
+DHCP
+中继
+三层交换
+单臂路由的缺陷
+初识三层交换
+三层交换机的转发原理
+--- slide20.xml ---
+三层交换机配置
+三层交换机配置
+DHCP
+中继
+3-2
+SW-3L(config)#interface vlan 2        
+SW-3L(config-if)#ip address 192.168.2.1 255.255.255.0
+SW-3L(config-if)#
+ip helper-address 192.168.100.100
+SW-3L(config-if)#no shutdown 
+ 
+SW-3L(config)#interface vlan 3
+SW-3L(config-if)#ip address 192.168.3.1 255.255.255.0
+SW-3L(config-if)#
+ip helper-address 192.168.100.100
+SW-3L(config-if)#no shutdown 
+ 
+SW-3L(config)#interface vlan 100
+SW-3L(config-if)#ip address 192.168.100.1 255.255.255.0                
+SW-3L(config-if)#no shutdown 
+DHCP
+中继
+--- slide21.xml ---
+请思考：
+    DHCP
+服务器如何配置？
+三层交换机配置
+DHCP
+中继
+3-3
+DHCP
+服务器需要配置三个地址池：
+192.168.2.0
+192.168.3.0
+192.168.100.0
+--- slide22.xml ---
+本章总结
+三层交换的应用
+三层交换机的配置
+三层交换机配置
+DHCP
+中继
+三层交换
+单臂路由的缺陷
+初识三层交换
+三层交换机的转发原理
+--- slide23.xml ---
+实验环境
+需求描述
+在
+R1
+上配置
+DHCP
+服务器，
+PC
+自动获得
+IP
+地址和网关
+配置设备实现全网互通
+实验案例：三层交换机配置
+3-1
+VLAN10:192.168.10.1/24
+VLAN20:192.168.20.1/24
+VLAN20
+VLAN10
+F0/14
+F0/0
+SW1
+F0/15
+F0/0
+F0/0
+R2
+Lo0:192.168.1.1/32
+.2
+.1
+192.168.0.0/30
+R1
+--- slide24.xml ---
+实现思路
+DHCP
+服务器和
+PC
+不是同一
+VLAN
+，需配置
+DHCP
+中继
+在三层交换机上配置三层交换和路由实现全网互通
+学员练习（阶段一）
+在
+SW1
+上创建
+VLAN 10
+和
+VLAN 20
+，并划分端口
+在
+SW1
+上配置路由接口，配置默认路由
+在
+R2
+上配置
+Loopback
+接口，配置静态路由
+实验案例：三层交换机配置
+3-2
+--- slide25.xml ---
+谢谢
+--- slide3.xml ---
+VLAN
+之间的通信需要路由器来完成
+VLAN
+增加导致数据量增大
+路由器与交换机之间路径成为整个网络的瓶颈
+单臂路由产生的瓶颈
+3-1
+VLAN 1
+VLAN 2
+--- slide4.xml ---
+增加路由器接口可以缓解流量瓶颈吗？
+单臂路由产生的瓶颈
+3-2
+R1
+SW1
+主机
+A
+主机
+B
+SW2
+主机
+C
+主机
+D
+F0/0
+F0/1
+VLAN 10
+VLAN 20
+VLAN 30
+VLAN 40
+可以缓解瓶颈问题吗？
+VLAN 10
+--- slide5.xml ---
+单臂路由的缺陷
+“单臂”为网络骨干链路，容易形成网络瓶颈
+子接口依然依托于物理接口，应用不灵活
+VLAN
+间转发需要查看路由表，严重浪费设备资源
+单臂路由产生的瓶颈
+3-3
+--- slide6.xml ---
+使用三层交换技术实现
+VLAN
+间通信
+三层交换
+=
+二层交换
++
+三层转发
+三层交换技术
+三层交换机采用硬件来交换和路由选择数据包。
+如何实现？
+--- slide7.xml ---
+以太帧头
+ CRC
+IP
+包头
+ 数据
+传统的
+MLS2-1
+3
+层转发过程中要重新封装
+2
+层
+三层交换机上，第
+3
+层引擎处理数据流的第一个包
+以太帧头
+IP
+包头
+ 数据
+CRC
+VLAN 1
+VLAN 2
+以太帧头
+IP
+包头
+  数据
+ CRC
+以太帧头
+ CRC
+ARP
+请求与响应
+--- slide8.xml ---
+IP
+包头
+以太帧头
+ CRC
+IP
+包头
+ 数据
+以太帧头
+IP
+包头
+  数据
+ CRC
+以太帧头
+IP
+包头
+ 数据
+CRC
+传统的
+MLS2-2
+交换
+ASIC
+从
+3
+层引擎中获悉
+2
+层重写信息在硬件中创建一个
+MLS
+条目，负责重写和转发数据流中的后续数据包
+以太帧头
+ CRC
+ 数据
+VLAN 1
+以太帧头
+ CRC
+一次
+路由，
+多次
+交换
+VLAN 2
+--- slide9.xml ---
+CEF
+是一种基于拓扑转发的模型
+转发信息库（
+FIB
+）
+邻接关系表
+基于
+CEF
+的
+MLS
+10.10.10.2/32   VLAN 1
+10.20.20.2/32   VLAN 2
+主机
+A
+10.10.10.2/24 0006.1be3.9366
+主机
+B
+10.20.20.2/24
+000c.295e.1743
+00061BE39366
+0016C72E9700
+000C295E1743
+0016C72E9700
+邻接关系表
+FIB
+表
+①主机
+A
+给
+B
+发
+送单播数据包
+0016.c72e.9700
+②交换机查找
+邻接关系表
+③转发
+VLAN 1
+VLAN 2
+
+=== 7. STP工作原理及配置PVST+（备选） ===
+--- slide1.xml ---
+理解
+STP
+工作原理
+会配置
+PVST+
+实现负载均衡
+目标
+--- slide10.xml ---
+带宽与路径成本的关系
+生成树的算法
+10-5
+链路带宽（
+Mbps
+）
+路径成本
+10
+100
+16
+62
+45
+39
+100
+19
+155
+14
+622
+6
+1000
+4
+10000
+2
+--- slide11.xml ---
+端口
+ID
+生成树的算法
+10-6
+ 
+8
+位
+ 
+端口优先级
+端口编号
+8
+位
+取值范围：
+0 
+～ 
+255
+缺省值：
+128
+--- slide12.xml ---
+SW3
+在非根网桥上，选择一个根端口（
+RP
+）
+生成树的算法
+10-7
+SW2
+优先级：
+4096
+MAC
+地址： 
+000d.2800.b100
+优先级：
+32768
+MAC
+地址： 
+000d.2800.b101
+优先级：
+32768
+MAC
+地址： 
+000d.2800.b102
+SW1
+Root Bridge
+在
+SW1
+和
+SW3
+上，到达
+SW2
+最近的端口是根端口
+Root Port
+100M
+100M
+100M
+Root Port
+--- slide13.xml ---
+根桥上的端口全是指定端口
+在每个网段上，选择
+1
+个指定端口
+非根桥上的指定端口，选择顺序：
+根路径成本较低
+所在的交换机的网桥
+ID
+的值较小
+端口
+ID
+的值较小
+生成树的算法
+10-8
+--- slide14.xml ---
+在每个网段选择
+1
+个指定端口（
+DP
+）
+生成树的算法
+10-9
+SW2
+优先级：
+4096
+MAC
+地址： 
+000d.2800.b100
+优先级：
+32768
+MAC
+地址： 
+000d.2800.b101
+优先级：
+32768
+MAC
+地址： 
+000d.2800.b102
+SW3
+SW1
+Root Bridge
+Root Port
+100M
+100M
+100M
+Root Port
+根网桥上的端口都是指定端口
+在这个网段上，
+B
+的网桥
+ID
+较小，所以
+B
+上的端口为指定端口
+这个端口既不是根端口，也不是指定端口，
+STP
+将这个端口阻塞（
+Block
+）
+DP
+DP
+DP
+--- slide15.xml ---
+最终形成逻辑结构无环拓扑
+生成树的算法
+10-10
+SW2
+优先级：
+4096
+MAC
+地址： 
+000d.2800.b100
+优先级：
+32768
+MAC
+地址： 
+000d.2800.b101
+优先级：
+32768
+MAC
+地址： 
+000d.2800.b102
+SW3
+SW1
+100M
+100M
+100M
+备份链路
+--- slide16.xml ---
+三台交换机的生成树协议选举
+生成树算法的验证
+4-1
+SW1
+SW2
+优先级：
+32768
+MAC
+地址： 
+0021.1ba5.6980
+优先级：
+32768
+MAC
+地址： 
+0021.d780.7400
+优先级：
+32768
+MAC
+地址： 
+001f.caff.1000
+SW3
+Root Bridge
+Root Port
+100M
+100M
+100M
+Root Port
+DP
+DP
+DP
+F0/23
+F0/24
+F0/24
+F0/24
+F0/23
+F0/23
+--- slide17.xml ---
+SW1
+的生成树状态
+生成树算法的验证
+4-2
+SW1#show spanning-tree 
+VLAN0001
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    32769
+             Address     001f.caff.1000
+             This bridge is the root
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+  Bridge ID  Priority    32769  (priority 32768 sys-id-ext 1)
+             Address     001f.caff.1000
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time 300
+Interface        Role Sts Cost      Prio.Nbr Type
+---------------- ---- --- --------- -------- -----------------------------
+Fa0/23           Desg FWD 19        128.25   P2p 
+Fa0/24           Desg FWD 19        128.26   P2p
+根网桥信息
+本地交换机信息
+本地交换机接口信息
+生成树的根
+都是指定端口
+--- slide18.xml ---
+SW2
+的生成树状态
+生成树算法的验证
+4-3
+SW2#show spanning-tree 
+VLAN0001
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    32769
+             Address     001f.caff.1000
+             Cost        19
+             Port        26 (FastEthernet0/24)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+  Bridge ID  Priority    32769  (priority 32768 sys-id-ext 1)
+             Address     0021.1ba5.6980
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time 300
+Interface        Role Sts Cost      Prio.Nbr Type
+------------- ---- --- --------- -------- --------------------------------
+Fa0/23           Desg FWD 19        128.25   P2p               
+Fa0/24           Root FWD 19        128.26   P2p
+指定端口
+--- slide19.xml ---
+SW3
+的生成树状态
+生成树算法的验证
+4-4
+SW3#show spanning-tree 
+VLAN0001
+  Spanning tree enabled protocol ieee
+  Root ID    Priority    32769
+             Address     001f.caff.1000
+             Cost        19
+             Port        23 (FastEthernet0/23)
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+  Bridge ID  Priority    32769  (priority 32768 sys-id-ext 1)
+             Address     0021.d780.7400
+             Hello Time   2 sec  Max Age 20 sec  Forward Delay 15 sec
+             Aging Time 300
+Interface        Role Sts Cost      Prio.Nbr Type
+------------- ---- --- --------- -------- --------------------------------
+Fa0/23           Root FWD 19        128.23   P2p 
+Fa0/24           Altn  BLK 19        128.24   P2p 
+阻塞端口
+--- slide2.xml ---
+本章结构
+STP
+工作原理
+生成树算法及验证
+STP
+的收敛
+BPDU
+（桥协议数据单元）
+生成树协议（
+STP
+）
+交换网络环路的产生
+STP
+的应用
+STP
+与
+VLAN
+的关系
+PVST+
+的配置案例
+PVST+
+的配置命令
+STP
+简介
+STP
+概述
+--- slide20.xml ---
+BPDU
+Bridge Protocol Data Unit 
+－桥协议数据单元
+使用组播发送
+BPDU
+BPDU
+分为
+2
+种类型：
+配置
+BPDU
+拓扑变更通告（
+TCN
+）
+BPDU
+BPDU
+报文字段
+BPDU
+（桥协议数据单元）
+--- slide21.xml ---
+当交换机启动时，假定自己是根网桥，在向外发送的
+BPDU
+中根网桥
+ID
+字段填写自己的网桥
+ID
+STP
+利用
+BPDU
+选择根网桥
+网桥
+ID
+：
+4096.000d.2800.b100
+网桥
+ID
+： 
+32768.000d.2800.b101
+网桥
+ID
+：
+32768.000d.2800.b102
+SW3
+100M
+100M
+100M
+SW2
+字段
+值
+根网桥
+ID
+4096.000d.2800.b100
+根路径成本
+0
+发送网桥
+ID
+4096.000d.2800.b100
+端口
+ID
+xxxx
+SW1
+字段
+值
+根网桥
+ID
+32768.000d.2800.b101
+根路径成本
+0
+发送网桥
+ID
+--- slide22.xml ---
+交换机端口的
+5
+种
+STP
+状态
+STP
+的收敛
+状　　态
+用　　途
+转发（
+Forwarding
+）
+发送
+/
+接收用户数据
+学习（
+Learning
+）
+构建网桥表
+侦听（
+Listening
+）
+构建“活动”拓扑
+阻塞（
+Blocking
+）
+只接收
+BPDU
+禁用（
+Disabled
+）
+强制关闭
+--- slide23.xml ---
+STP
+的
+3
+种计时器
+Hello
+时间
+转发延迟
+最大老化时间
+生成树计时器
+--- slide24.xml ---
+请思考：
+STP
+选举过程中，如何确定哪些端口被阻塞？
+生成树端口状态有哪些，分别表示什么含义？
+小结
+--- slide25.xml ---
+ IEEE
+通用生成树（
+CST
+）不考虑
+VLAN
+ 
+VLAN
+与
+STP
+关系
+VLAN3
+VLAN2
+VLAN2
+VLAN1
+VLAN1
+VLAN3
+经过
+STP
+计算，会
+有一条链路被断开
+PVST+
+区域
+PVST
+区域
+CST
+区域
+ 
+PVST
+（
+Cisco
+私有）为每个
+VLAN
+构造一个生成树实例
+ 
+IEEEPVST+
+Cisco
+私有
+可以与
+CST
+互操作
+--- slide26.xml ---
+PVST+
+配置的意义
+配置网络中比较稳定的交换机为根网桥
+利用
+PVST+
+实现网络的负载分担
+PVST+
+的配置命令
+VLAN 1
+～
+10
+VLAN 1
+～
+5   
+的根网桥
+VLAN 1
+～
+5
+的根端口
+VLAN 1
+～
+5
+数据的流向
+接入交换机
+VLAN 1
+～
+10
+VLAN 1
+～
+10
+VLAN 6
+～
+10  
+的根网桥
+VLAN 6
+～
+10
+的根端口
+VLAN 6
+～
+10
+数据的流向
+--- slide27.xml ---
+启用生成树命令
+Switch
+(
+config
+)
+#spanning-tree vlan 
+vlan-list
+指定根网桥
+Switch
+(
+config
+)
+#spanning-tree vlan 
+vlan-list
+ priority 
+Bridge-priority
+Switch
+(
+config
+)
+#spanning-tree vlan 
+vlan-list
+ root { primary|secondary }
+修改端口成本
+Switch
+(
+config-if
+)
+#spanning-tree vlan 
+vlan-list
+ cost 
+cost
+修改端口优先级
+Switch
+(
+config-if
+)
+#spanning-tree vlan 
+vlan-list 
+port-priority 
+priority
+PVST+
+的配置命令
+2-1
+--- slide28.xml ---
+配置速端口
+Switch(config-if)#spanning-tree portfast
+查看生成树的配置
+Switch#show spanning-tree
+查看某个
+VLAN
+的生成树详细信息
+Switch#show spanning-tree vlan vlan-id detail
+PVST+
+的配置命令
+2-2
+--- slide29.xml ---
+需求描述
+三台交换机相连，配置
+PVST+
+负载均衡
+SW1
+成为
+VLAN 1
+的根网桥
+SW2
+成为
+VLAN 2
+的根网桥
+SW3
+上配置速端口（
+F0/1
+～
+F0/10
+）
+PVST+
+的配置案例
+2-1
+SW3
+F0/23
+F0/24
+F0/23
+SW2
+SW1
+F0/24
+F0/24
+F0/23
+VLAN 1
+的根网桥
+VLAN 2
+的根网桥
+--- slide3.xml ---
+交换网络环路的产生
+广播风暴的形成
+STP
+概述
+2-1
+SW3
+PC1
+PC2
+F0/2
+F0/2
+F0/1
+F0/1
+广播
+广播
+F0/1
+F0/2
+SW2
+SW1
+广播
+SW2
+和
+SW3
+从所有非接收端口转发广播
+最终形成广播风暴
+--- slide30.xml ---
+配置思路
+为交换机配置
+VLAN
+并配置交换机连接端口为
+Trunk
+模式
+配置
+VLAN
+负载均衡
+验证
+STP
+信息
+配置速端口
+PVST+
+的配置案例
+2-2
+教员
+演示操作过程
+--- slide31.xml ---
+本章总结
+STP
+工作原理
+生成树算法及验证
+STP
+的收敛
+BPDU
+（桥协议数据单元）
+生成树协议（
+STP
+）
+交换网络环路的产生
+STP
+的应用
+STP
+与
+VLAN
+的关系
+PVST+
+的配置案例
+PVST+
+的配置命令
+STP
+简介
+STP
+概述
+--- slide32.xml ---
+需求描述
+在交换机上添加
+VLAN 2
+和
+VLAN 3
+SW1
+成为
+VLAN 1
+的根网桥
+SW2
+成为
+VLAN 2
+的根网桥
+SW3
+成为
+VLAN 3
+的根网桥
+实验一：
+配置
+STP 2-1
+SW3
+F0/14
+F0/14
+F0/15
+SW2
+SW1
+F0/15
+F0/15
+F0/14
+--- slide33.xml ---
+实现思路
+更改
+STP
+优先级，使交换机成为相应
+VLAN
+的根网桥
+学员练习
+实验一：
+配置
+STP 2-2
+40
+分钟完成
+--- slide34.xml ---
+需求描述
+四台交换机相连，配置
+PVST+
+负载均衡
+链路均为
+100M
+链路，其中的交换机设备都为默认配置
+实验二：
+配置
+VLAN
+负载均衡
+2-1
+SW1
+SW2
+SW4
+SW3
+F0/15
+F0/15
+F0/14
+F0/14
+F0/14
+F0/14
+F0/13
+F0/15
+F0/13
+F0/15
+VLAN 1 ~ 2
+的根网桥
+VLAN 3 ~ 4
+的根网桥
+--- slide35.xml ---
+实现思路
+更改
+STP
+优先级，使交换机成为相应
+VLAN
+的根网桥
+通过
+show
+命令查看
+STP
+信息
+学员练习
+实验二：
+配置
+VLAN
+负载均衡
+2-2
+40
+分钟完成
+--- slide36.xml ---
+谢谢
+--- slide4.xml ---
+STP
+简介
+STP 
+－ 
+Spanning Tree Protocol(
+生成树协议
+)
+逻辑上断开环路，防止广播风暴的产生
+当线路故障，阻塞接口被激活，恢复通信，起备份线路的作用
+STP
+概述
+2-2
+SW3
+SW2
+SW1
+×
+--- slide5.xml ---
+生成树算法及验证
+BPDU
+（桥协议数据单元）
+STP
+的收敛
+STP
+工作原理
+--- slide6.xml ---
+生成树算法分为
+3
+个步骤：
+选择根网桥（
+Root Bridge
+）
+选择根端口（
+Root Ports
+）
+选择指定端口（
+Designated Ports
+）
+生成树的算法
+10-1
+--- slide7.xml ---
+网桥
+ID
+（
+BID
+）
+网桥
+ID
+是唯一的
+选择交换网络中网桥
+ID
+最小的交换机成为根网桥
+生成树的算法
+10-2
+2
+字节
+6
+字节
+取值范围：
+0 
+～ 
+65535
+缺省值：
+32768
+ 
+ 
+网桥优先级
+网桥的
+MAC
+地址
+--- slide8.xml ---
+以此拓扑为例，介绍
+STP
+的计算过程
+根据网桥
+ID
+选择根网桥
+生成树的算法
+10-3
+SW2
+优先级：
+4096
+MAC
+地址： 
+000d.2800.b100
+优先级：
+32768
+MAC
+地址： 
+000d.2800.b101
+优先级：
+32768
+MAC
+地址： 
+000d.2800.b102
+SW3
+SW1
+Root Bridge
+100M
+100M
+100M
+--- slide9.xml ---
+选择根端口的依据：
+到根网桥最低的根路径成本
+直连的网桥
+ID
+最小
+端口
+ID
+最小
+根路径成本
+网桥到根网桥的路径上所有链路的成本之和
+生成树的算法
+10-4
+SW2
+SW3
+SW1
+路径成本：
+19
+路径成本：
+100
+SW3
+的
+Port 1
+根路径成本＝
+19
+＋
+100
+＝
+119
+Port 1
+
+=== 7. 静态路由原理 ===
+--- slide1.xml ---
+目标
+理解路由的原理
+配置静态路由和默认路由
+排查静态路由简单故障
+--- slide10.xml ---
+静态路由和默认路由的配置
+静态路由的配置
+默认路由的配置
+代表任何网络
+Router(config)# ip route 
+network mask 
+{
+address
+ | 
+interface
+}
+Router
+（
+config
+）
+# ip route 0.0.0.0 0.0.0.0 
+address
+--- slide11.xml ---
+实现两台主机互通
+在没有配置路由条目的情况下
+让
+R1
+知道
+30.0.0.0
+，让
+R2
+知道
+10.0.0.0
+配置实例一
+F0/0
+F0/1
+F0/1
+R2
+F0/0
+10.0.0.0/24
+30.0.0.0/24
+20.0.0.0/24
+R1
+我想去
+30.0.0.0
+我不知道
+30.0.0.0
+R1(config)#ip route 30.0.0.0 255.255.255.0 20.0.0.2
+R2(config)#ip route 10.0.0.0 255.255.255.0 20.0.0.1
+R1# show ip route
+Codes: C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - -IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route
+ 
+Gateway of last resort is not set
+ 
+           10.0.0.0/24 is subnetted, 1 subnets
+C
+    	  10.0.0.0 is directly connected, 
+FastEthernet0/0
+           20.0.0.0/24 is subnetted, 1 subnets
+C    	  20.0.0.0 is directly connected, FastEthernet0/1
+           30.0.0.0/24 is subnetted, 1 subnets
+S
+    	  30.0.0.0 [1/0] via 
+20.0.0.1
+直连路由
+静态路由
+直连路由网段所在端口
+--- slide12.xml ---
+实现内网主机访问
+Internet
+服务器
+配置实例二
+192.168.1.1/24
+192.168.1.2/24
+F0/0
+F0/1
+F0/1
+R1
+R2
+R1
+的
+F0/0
+：
+192.168.1.254/24
+R1
+的
+F0/1
+：
+200.0.0.1/24
+R2
+的
+F0/1
+：
+200.0.0.2/24
+R1(config)#ip route 0.0.0.0 0.0.0.0 200.0.0.2
+ 
+R2(config)#ip route 192.168.1.0 255.255.255.0 200.0.0.1
+--- slide13.xml ---
+故障排查
+分层检查
+从物理层检查，查看端口状态来排除接口、线缆等问题 
+查看
+IP
+地址和路由等的配置是否正确 
+分段检查
+将网络划分成多个小的段，逐段排除错误 
+--- slide14.xml ---
+故障排除案例一
+需求分析
+R1
+与
+R2
+无法正常通信
+排除步骤
+排除物理故障
+排除
+IP
+地址故障
+F0/0
+F0/0
+R1
+R2
+192.168.1.0/24
+--- slide15.xml ---
+故障排除案例二
+需求分析
+R1
+为分公司网关；
+R2
+为总公司网关
+通过静态路由实现网络互通
+请思考
+是否只在
+R1
+上配置默认路由，而不需要在
+R2
+上配置？
+在
+R1
+和
+R2
+路由器上都配置默认路由，这种部署对网络通信是否有影响？
+Loopback 0
+192.168.10.0/24
+Loopback 0
+192.168.20.0/24
+F0/0
+F0/0
+R1
+R2
+192.168.1.0/24
+--- slide16.xml ---
+什么是直连路由？
+简述静态路由和默认路由的特点和使用环境？
+配置默认路由的命令中“
+0.0.0.0 0.0.0.0”
+表示什么意思？
+考题
+--- slide17.xml ---
+需求描述
+Loopback
+地址模拟网络环境
+配置静态路由，实现各网段互通
+实验
+1:
+配置静态路由实现全网互通
+2-1
+Loopback 0
+192.168.20.0/24
+R2
+R1
+R3
+Loopback 0
+192.168.10.0/24
+Loopback 0
+192.168.30.0/24
+192.168.1.0/24
+192.168.2.0/24
+192.168.3.0/24
+--- slide18.xml ---
+实现思路
+非直连网段需要配置静态路由
+配置完成后，使用
+ping
+命令进行测试
+学员练习
+实验
+1:
+配置静态路由实现全网互通
+2-2
+40
+分钟完成
+--- slide19.xml ---
+需求描述
+全网配置静态路由互通，并实现以下要求
+192.168.20.0/24
+访问
+192.168.30.0/24
+时，数据从
+R2
+到
+R3
+192.168.20.0/24
+访问
+192.168.10.0/24
+时，数据从
+R2
+经过
+R1
+到
+R3
+实验
+2
+：实现路由选路
+2-1
+Loopback 0
+192.168.10.0/24
+Loopback 0
+192.168.20.0/24
+Loopback 1
+192.168.30.0/24
+192.168.1.0/24
+192.168.2.0/24
+192.168.3.0/24
+R2
+R3
+R1
+F0/0
+F0/0
+F0/0
+F0/1
+F0/1
+F0/1
+--- slide2.xml ---
+静态路由
+静态路由和默认路由
+静态路由
+静态路由和默认路由的配置
+路由原理
+默认路由
+静态路由配置命令
+静态路由的故障案例
+路由器转发数据包的封装过程
+交换与路由对比
+路由器的工作原理
+路由表的形成
+本章结构
+--- slide20.xml ---
+实现思路
+在
+R2
+、
+R1
+上配置静态路由
+在
+R3
+上配置回程的静态路由
+实验
+2
+：实现路由选路
+2-2
+--- slide21.xml ---
+谢谢
+--- slide3.xml ---
+路由概述
+路由
+跨越从源主机到目标主机的一个互联网络来转发数据包的过程
+主机
+A
+192.168.1.0
+10.10.1.0
+主机
+B
+能够将数据包转发到正确的目的地，并在转发过程中选择最佳路径的设备－路由器
+--- slide4.xml ---
+路由器的工作原理
+路由表
+网段
+接口
+1.0
+E0
+2.0
+S0
+4.0
+S0
+路由表
+网段
+接口
+1.0
+S0
+2.0
+S0
+4.0
+E0
+1.1
+4.1
+1.0
+4.0
+E0
+E0
+S0
+S0
+2.1
+2.2
+A
+B
+主机
+1.1
+要发送数据到
+4.1
+路由器收到数据，查看数据包中的目标地址为
+4.1
+，查找路由表
+路由器
+A
+根据路由表转发数据到
+S0
+口
+路由器
+B
+接收到数据包，查看数据包的目标地址，并查找路由表
+路由器
+B
+根据路由表转发数据到
+E0
+--- slide5.xml ---
+路由表的形成
+路由表
+路由器中维护的路由条目的集合
+路由器根据路由表做路径选择
+路由表的形成
+直连网段
+配置
+IP
+地址，端口
+UP
+状态，形成直连路由
+非直连网段
+路由表
+网段
+接口
+  192.168.1.0/24                f0/0
+   10.0.0.0/8                       f0/1
+192.168.1.1/24
+f0/0
+f0/1
+20.0.0.0/8
+对于非直连的网段，需要静态路由或动态路由，将网段添加到路由表中
+10.1.1.1/8
+--- slide6.xml ---
+静态路由
+静态路由
+由管理员手工配置的，是单向的
+缺乏灵活性
+S0
+S0
+192.168.1.0/24
+A
+B
+192.168.2.2
+192.168.2.1
+目的地为
+192.168.1.0
+时，需将数据包转发给
+路由器
+B
+的
+192.168.2.1
+的接口
+--- slide7.xml ---
+默认路由
+默认路由
+当路由器在路由表中找不到目标网络的路由条目时，路由器把请求转发到默认路由接口
+S0
+S0
+192.168.1.0/24
+A
+B
+192.168.2.2
+192.168.2.1
+目的地为庞大的地址集合，可将数据包转发给
+路由器
+A
+的
+192.168.2.2
+接口
+Stub Network-
+末节网络
+--- slide8.xml ---
+路由器转发数据包的封装过程
+Host A
+Host B
+A
+B
+E0
+E1
+E0
+E1
+192.168.1.2/24
+00-11-12-21-11-11
+192.168.1.1/24
+00-11-12-21-22-22
+10.1.1.1/8
+00-11-12-21-33-33
+10.1.1.2/8
+00-11-12-21-44-44
+192.168.2.1/24
+00-11-12-21-55-55
+192.168.2.2/24
+00-11-12-21-66-66
+00-11-12-21-55-55
+00-11-12-21-66-66
+SA:192.168.1.2/24
+DA:192.168.2.2/24
+00-11-12-21-33-33
+00-11-12-21-44-44
+SA:192.168.1.2/24
+DA:192.168.2.2/24
+00-11-12-21-22-22
+00-11-12-21-11-11
+SA:192.168.1.2/24
+DA:192.168.2.2/24
+--- slide9.xml ---
+交换与路由对比
+路由工作在网络层
+根据“路由表”转发数据
+路由选择
+路由转发
+交换工作在数据链路层
+根据“
+MAC
+地址表”转发数据
+硬件转发
+
+=== 8. HSRP原理、配置和排错 ===
+--- slide1.xml ---
+理解
+HSRP
+的工作原理
+掌握
+HSRP
+的术语和参数的作用
+会
+HSRP
+的配置和排错
+目标
+--- slide10.xml ---
+请思考：
+简述
+HSRP
+中路由器的角色有哪些？
+简述为什么
+HSRP
+的报文
+TTL=1
+？
+简述
+HSRP
+与
+VRRP
+的区别？
+小结
+--- slide11.xml ---
+配置为
+HSRP
+的成员
+Switch(config-if)#standby 
+group-number
+ ip 
+virtual-ip-address
+配置
+HSRP
+的优先级
+Switch(config-if)#standby  
+group-number
+  priority  
+priority-value
+ 
+HSRP
+的配置
+4-1
+HSRP
+备份组号
+备份组虚拟
+IP
+地址
+范围
+0
+～
+255
+，默认
+100
+--- slide12.xml ---
+HSRP
+占先权
+	
+优先级高的路由器重新获得转发权，恢复成为活跃路由器
+HSRP
+占先权配置
+Switch(config-if)#standby 
+group-number
+ preempt
+HSRP
+计时器配置
+配置
+Hello
+间隔和保持时间
+Switch(config-if)#standby group-number times 
+hellotime holdtime
+HSRP
+的配置
+4-2
+--- slide13.xml ---
+HSRP
+端口跟踪
+跟踪端口不可用时，
+HSRP
+优先级降低
+活跃路由器可以根据线路情况自动调整
+HSRP
+的配置
+4-3
+路由器
+A
+活跃路由器
+路由器
+B
+备份路由器
+虚拟路由器
+互联网
+路由器
+B
+活跃路由器
+路由器
+A
+备份路由器
+Switch(config-if)#standby 
+group-number
+ track
+ type mod/num interface-priority
+--- slide14.xml ---
+查看
+HSRP
+的状态
+查看
+HSRP
+摘要信息
+Switch#show standby [
+type mod/num
+] [
+group-number
+] brief
+查看
+HSRP
+详细信息
+Switch#show standby
+HSRP
+的配置
+4-4
+--- slide15.xml ---
+HSRP
+的配置案例
+3-1
+F0/24
+F0/24
+F0/23
+F0/23
+F0/24
+F0/1
+F0/1
+F0/1
+F0/0
+F0/1
+Internet
+F1/0
+SW1  
+优先级
+200
+192.168.1.1/24
+SW2  
+优先级
+150
+192.168.1.2/24
+虚拟路由器
+192.168.1.254
+SW3
+PC
+VLAN 2
+192.168.1.10/24
+F0/23
+R1
+--- slide16.xml ---
+SW1
+配置
+SW2
+配置
+HSRP
+的配置案例
+3-2
+SW1(config)#interface vlan 2
+SW1(config-if)#ip address 192.168.1.1 255.255.255.0
+SW1(config-if)#standby 10 ip 192.168.1.254
+SW1(config-if)#standby 10 priority 200
+SW1(config-if)#standby 10 preempt 
+SW1(config-if)#standby 10 timers 2 8
+SW1(config-if)#standby 10 track fastEthernet 0/1 100
+SW2(config)#interface vlan 2
+SW2(config-if)#ip address 192.168.1.2 255.255.255.0
+SW2(config-if)#standby 10 ip 192.168.1.254
+SW2(config-if)#standby 10 priority 150
+SW2(config-if)#standby 10 preempt 
+SW2(config-if)#standby 10 timers 2 8
+配置虚拟
+IP
+配置优先级
+配置占先权
+配置端口跟踪
+配置计时器
+--- slide17.xml ---
+查看
+HSRP
+信息
+HSRP
+的配置案例
+3-3
+SW1#show standby brief       
+                     P indicates configured to preempt.
+                     |
+Interface   
+Grp
+  
+Pri
+ P State   Active          Standby         Virtual IP
+Vl2            10   200 P Active  local          192.168.1.2    192.168.1.254
+SW2#show standby brief       
+                     P indicates configured to preempt.
+                     |
+Interface   
+Grp
+  
+Pri
+ P  State      Active          Standby         Virtual IP
+Vl2            10   150 P Standby  192.168.1.1     local       192.168.1.254
+接口
+HSRP
+组号
+本地优先级
+本地状态
+活跃路由器
+为本地路由器
+备份路由器地址
+虚拟
+IP
+地址
+占先权启用
+SW1#show standby 
+Vlan2 - Group 10 
+  State is Active
+    2 state changes, last state change 01:53:25 
+  Virtual IP address is 192.168.1.254
+  Active virtual MAC address is 0000.0c07.ac0a
+    Local virtual MAC address is 0000.0c07.ac0a (v1 default)
+  Hello time 2 sec, hold time 8 sec
+    Next hello sent in 0.608 
+secs
+  Preemption enabled
+  Active router is local
+  Standby router is 192.168.1.2, priority 150 (expires in 8.192 sec) 
+  Priority 200 (configured 200)
+--- slide18.xml ---
+需求描述
+配置
+HSRP
+实现备份冗余
+配置
+HSRP
+和
+STP
+实现流
+   
+量的负载均衡
+HSRP
+的应用案例
+F0/24
+F0/24
+F0/23
+F0/23
+F0/24
+F0/1
+F0/1
+F0/1
+F0/0
+F0/1
+SW1
+SW2
+SW3
+PC1
+F0/23
+R1
+F0/2
+PC2
+--- slide19.xml ---
+HSRP
+常见故障
+HSRP
+组中交换机都处于初始状态
+HSRP
+组中交换机都处于活跃状态
+活跃设备上行链路故障，备份设备没有成为活跃状态
+优先级高的路由器接入，没有成为活跃设备
+HSRP
+故障排查
+--- slide2.xml ---
+本章结构
+HSRP
+的配置及应用
+HSRP
+的计时器
+HSRP
+与
+VRRP
+的区别
+HSRP
+的应用案例
+HSRP
+的配置
+热备份路由选择协议（
+HSRP
+）
+HSRP
+故障排查
+HSRP
+的相关概念
+热备份路由选择协议原理
+HSRP
+的状态
+--- slide20.xml ---
+需求描述
+搭建由两台核心交换机做热备份的公司网络
+在网络中实现
+VLAN
+的负载均衡
+实验：
+配置
+HSRP2-1
+F0/15
+F0/15
+F0/14
+F0/14
+F0/14
+F0/13
+F0/1
+F0/0
+PC1
+PC2
+VLAN 2
+VLAN 3
+SW2
+SW1
+PC3
+PC4
+SW3
+SW4
+VLAN 2
+VLAN 4
+F0/14
+F0/15
+F0/15
+F0/13
+F0/0
+F0/1
+--- slide21.xml ---
+实现思路
+配置交换机的基本信息
+HSRP
+的基本配置
+配置
+HSRP
+的优先级
+配置
+HSRP
+的占先权
+配置
+STP
+（
+PVST+
+）实现
+VLAN
+负载均衡
+验证
+HSRP
+学员练习
+实验：
+配置
+HSRP2-2
+--- slide22.xml ---
+需求描述
+如果通过一台路由器连到
+Internet
+，该如何配置实现？
+扩展实验：
+配置
+HSRP2-1
+F0/1
+F0/1
+F0/0
+F0/1
+Internet
+F1/0
+SW1
+SW2
+R1
+--- slide23.xml ---
+实现思路
+配置浮动路由
+分析
+SW1
+和
+SW2
+中间连线的作用及数据包走向
+学员练习
+扩展实验：
+配置
+HSRP2-2
+--- slide24.xml ---
+谢谢
+--- slide3.xml ---
+热备份路由选择协议
+HSRP
+（
+Hot Standby Routing Protocol
+）
+Cisco
+私有协议
+HSRP
+的相关概念
+5-1
+HSRP
+虚拟路由器
+虚拟
+IP:1.1.1.1/24
+虚拟
+MAC: 0000.0c07.ac00
+主机
+IP
+：
+1.1.1.10
+缺省网关：
+1.1.1.1/24
+Internet
+路由器
+A
+路由器
+B
+Internet
+--- slide4.xml ---
+HSRP
+组成员
+活跃路由器
+备份路由器
+虚拟路由器
+其他路由器
+HSRP
+的相关概念
+5-2
+Internet
+虚拟路由器
+活跃路由器
+备份路由器
+--- slide5.xml ---
+HSRP
+原理
+HSRP
+的相关概念
+5-3
+我需要到达
+172.16.3.127
+路由器
+A
+优先级
+200
+（活跃路由器）
+172.16.10.82
+0010.f6b3.d000
+路由器
+B
+优先级
+150
+（备份路由器）
+172.16.10.169
+0010.0b79.5800
+虚拟路由器
+172.16.10.110
+0000.0c07.ac2f
+Internet
+172.16.3.127
+使用
+MAC
+地址
+0000.0c07.ac2f
+--- slide6.xml ---
+2f
+HSRP
+虚拟
+MAC
+地址
+HSRP
+的相关概念
+5-4
+路由器
+A
+优先级
+200
+（活跃路由器）
+172.16.10.82
+0010.f6b3.d000
+路由器
+B
+优先级
+150
+（备份路由器）
+172.16.10.169
+0010.0b79.5800
+虚拟路由器
+172.16.10.110
+0000.0c07.ac2f
+HSRP
+组
+47
+Switch#show ip arp
+Protocol  Address         Age (min)  Hardware Addr   Type   Interface
+Internet  172.16.10.82         -        0010.f6b3.d000      ARPA    Vlan10
+Internet  172.16.10.169       -        0010.0b79.5800     ARPA    Vlan10
+Internet  172.16.10.110       -        0000.0c07.ac2f      ARPA    Vlan10
+虚拟
+IP
+地址和
+MAC
+地址
+厂商编码
+HSRP
+组号
+众所周知的虚拟
+MAC
+地址
+0000.0c
+07.ac
+HSRP
+虚拟
+MAC
+地址格式
+--- slide7.xml ---
+HSRP
+消息
+HSRP
+中的所有路由器都发送或接收
+HSRP
+消息
+UDP
+端口号
+1985
+使用组播发送
+HSRP
+消息，组播地址
+224.0.0.2
+TTL=1
+HSRP
+的相关概念
+5-5
+--- slide8.xml ---
+HSRP
+状态
+初始状态
+学习状态
+监听状态
+发言状态
+备份状态
+活跃状态
+HSRP
+计时器
+Hello
+间隔（默认
+3s
+）
+保持时间（默认
+10s
+）
+HSRP
+状态与计时器
+--- slide9.xml ---
+热备份路由协议
+HSRP
+Cisco
+私有协议
+虚拟路由冗余协议
+VRRP
+IETF
+制定，
+RFC 2338
+实现原理和过程与
+HSRP
+基本相同
+在协议细节上与
+HSRP
+有所区别
+HSRP
+与
+VRRP
+的区别
+
+=== 9. TCP、UDP 和ACL原理 ===
+--- slide1.xml ---
+理解
+TCP
+和
+UDP
+报文首部的格式
+理解
+TCP
+连接建立和终止的过程
+理解
+ACL
+的基本原理
+会配置标准
+ACL
+目标
+--- slide10.xml ---
+UDP
+协议
+无连接、不可靠的传输协议
+花费的开销小
+UDP
+报文的首部格式
+UDP
+长度：用来指出
+UDP
+的总长度，为首部加上数据
+校验和：用来完成对
+UDP
+数据的差错检验，它是
+UDP
+协议提供的唯一的可靠机制
+UDP
+协议
+2-1
+源端口号（
+16
+）
+目标端口号（
+16
+）
+UDP
+长度（
+16
+）
+UDP
+校验和（
+16
+）
+--- slide11.xml ---
+常用的
+UDP
+端口号及其功能
+UDP
+协议
+2-2
+端口
+协议
+说　　明
+69
+TFTP
+简单文件传输协议
+111
+RPC
+远程过程调用
+123
+NTP
+网络时间协议
+--- slide12.xml ---
+请思考：
+简述
+TCP
+与
+UDP
+区别？
+TCP
+建立连接需要三次握手，为什么终止连接需要四次握手？
+列举常见的
+TCP
+、
+UDP
+端口有哪些？
+小结
+--- slide13.xml ---
+访问控制列表（
+ACL
+）
+读取第三层、第四层包头信息
+根据预先定义好的规则对包进行过滤
+访问控制列表概述
+IP
+报头
+TCP
+报头
+数据
+源地址
+目的地址
+源
+端口
+目的端口
+访问控制列表利用这
+4
+个元素定义的规则
+--- slide14.xml ---
+访问控制列表在接口应用的方向
+出：已经过路由器的处理，正离开路由器接口的数据包
+入：已到达路由器接口的数据包，将被路由器处理
+列表应用到接口的方向与数据方向有关
+访问控制列表的工作原理
+2-1
+F0/0
+F1/0
+入方向
+出方向
+--- slide15.xml ---
+访问控制列表的处理过程
+访问控制列表的工作原理
+2-2
+拒绝
+允许
+允许
+允许
+到达访问控制组接口的数据包
+匹配
+第一条
+目的接口
+隐含的
+拒绝
+丢弃
+Y
+Y
+Y
+Y
+Y
+Y
+N
+N
+N
+匹配
+下一条
+拒绝
+拒绝
+拒绝
+匹配
+下一条
+--- slide16.xml ---
+标准访问控制列表
+基于源
+IP
+地址过滤数据包
+标准访问控制列表的访问控制列表号是
+1
+～
+99
+扩展访问控制列表
+基于源
+IP
+地址、目的
+IP
+地址、指定协议、端口和标志来过滤数据包
+扩展访问控制列表的访问控制列表号是
+100
+～
+199
+命名访问控制列表
+命名访问控制列表允许在标准和扩展访问控制列表中使用名称代替表号
+访问控制列表的类型
+--- slide17.xml ---
+创建
+ACL
+    Router
+(config)
+#access-list 
+access-list-number
+          
+     { permit | deny } 
+source 
+[ 
+source-wildcard
+ ]
+删除
+ACL
+    Router(config)# no access-list 
+access-list-number
+标准访问控制列表的配置
+3-1
+允许数据包通过
+拒绝数据包通过
+--- slide18.xml ---
+应用实例
+Router(config)# access-list 1 permit 192.168.1.0 0.0.0.255
+Router(config)# access-list 1 permit 192.168.2.2 0.0.0.0
+允许
+192.168.1.0/24
+和主机
+192.168.2.2
+的流量通过
+隐含的拒绝语句
+Router(config)# access-list 1 deny 0.0.0.0 255.255.255.255
+关键字
+host
+any
+标准访问控制列表的配置
+3-2
+--- slide19.xml ---
+将
+ACL
+应用于接口
+Router(config-if)# 
+ip
+ access-group 
+access-list-number
+ {in |out}
+在接口上取消
+ACL
+的应用
+Router(config-if)# no 
+ip
+ access-group 
+access-list-number 
+{in |out}
+标准访问控制列表的配置
+3-3
+--- slide2.xml ---
+本章结构
+访问控制列表概述
+访问控制列表的工作原理
+访问控制列表的类型
+访问控制列表（一）
+TCP
+协议
+标准访问控制列表的配置
+TCP
+和
+UDP
+协议
+创建
+ACL
+标准
+ACL
+的配置实例
+将
+ACL
+应用于接口
+UDP
+协议
+--- slide20.xml ---
+需求描述
+禁止主机
+PC2
+访问主机
+PC1
+，而允许所有其他的流量
+在哪个接口应用标准
+ACL
+应用在入方向还是出方向
+标准
+ACL
+的配置实例
+192.168.1.1/24
+F0/0
+F0/1
+R1
+PC1
+PC2
+PC3
+192.168.2.2/24
+192.168.2.3/24
+R1(
+config
+)# access-list 1 deny host 192.168.2.2
+R1(
+config
+)# access-list 1 permit any
+R1(
+config
+)# 
+int
+ f0/1
+R1(
+config
+-if)# 
+ip
+ access-group 1 in
+R1# show access-lists
+Standard IP access list 1
+    10 deny   192.168.2.2
+    20 permit any
+--- slide21.xml ---
+本章总结
+访问控制列表概述
+访问控制列表的工作原理
+访问控制列表的类型
+访问控制列表（一）
+TCP
+协议
+标准访问控制列表的配置
+TCP
+和
+UDP
+协议
+创建
+ACL
+标准
+ACL
+的配置实例
+将
+ACL
+应用于接口
+UDP
+协议
+--- slide22.xml ---
+预习作业
+预习目标
+配置扩展
+ACL
+配置命名
+ACL
+综合应用
+ACL
+预习下一章学生用书，完成预习作业
+命名
+ACL
+在配置上的灵活性体现在哪里？
+作业
+--- slide23.xml ---
+简述
+TCP
+与
+UDP
+区别？
+列举常见的
+TCP
+、
+UDP
+端口有哪些？
+简述标准访问控制列表的特点？
+考题
+--- slide24.xml ---
+实验环境
+两台
+Windows 2008
+主机，配置
+IIS
+搭建
+FTP
+服务器，在客户端主机安装
+Sniffer
+软件
+实验一：
+观察
+TCP
+建立链接的过程
+2-1
+--- slide25.xml ---
+需求描述
+在客户端通过被动模式连接
+FTP
+服务器，观察
+TCP
+的建立过程
+实现思路
+准备工作
+在客户端运行
+Sniffer
+抓包，通过
+IE
+浏览器访问
+FTP
+服务器
+过滤数据
+过滤范围：在
+FTP
+服务器和客户端主机之间
+分析数据
+分析三次握手的数据报文内容
+学员练习
+实验一：
+观察
+TCP
+建立链接的过程
+2-2
+40
+分钟完成
+--- slide26.xml ---
+实验环境
+如图所示，要求配置标准
+ACL
+实现：禁止主机
+PC1
+访问主机
+PC2
+，而允许所有其他的流量
+实验二：配置标准
+ACL
+实现需求
+3-1
+R1
+PC1
+F0/0
+F0/0
+F0/0
+R2
+R3
+PC2
+192.168.2.0/24
+192.168.1.1/24
+192.168.3.1/24
+--- slide27.xml ---
+需求描述
+主机
+PC1
+不能
+ping
+通
+192.168.3.1
+，但可以
+ping
+通
+192.168.2.1
+问题分析
+在哪个接口应用标准
+ACL
+在哪台路由器应用标准
+ACL
+实验二：配置标准
+ACL
+实现需求
+3-2
+--- slide28.xml ---
+实现思路
+配置路由实现网络互通
+确定在哪台路由器、哪个接口应用标准
+ACL
+配置标准
+ACL
+并应用到接口上
+查看并验证配置
+使用
+show access-lists
+命令查看
+ACL
+配置
+使用
+ping
+命令验证配置
+学员练习
+实验二：配置标准
+ACL
+实现需求
+3-3
+40
+分钟完成
+--- slide29.xml ---
+谢谢
+--- slide3.xml ---
+TCP/IP
+协议族的传输层协议主要有两个：
+TCP
+（
+Transmission Control Protocol 
+）
+传输控制协议
+UDP
+（
+User Datagram Protocol 
+）
+用户数据报协议
+TCP
+和
+UDP
+协议
+数据链路层
+网络层
+传输层
+应用层
+物理层
+TCP
+UDP
+TCP/IP
+--- slide4.xml ---
+TCP
+是面向连接的、可靠的进程到进程通信的协议
+TCP
+提供全双工服务，即数据可在同一时间双向传输
+TCP
+报文段
+TCP
+将若干个字节构成一个分组，叫报文段（
+Segment
+）
+TCP
+报文段封装在
+IP
+数据报中
+TCP
+协议
+IP数据报
+IP
+首部
+TCP
+报文段
+--- slide5.xml ---
+SYN
+：同步序号位，
+TCP
+需要建立连接时将该值设为
+1
+ACK
+：确认序号位，当该位为
+1
+时，用于确认发送方的数据
+FIN
+：当
+TCP
+断开连接时将该位置为
+1
+TCP
+报文段
+源端口号（
+16
+）
+目标端口号（
+16
+）
+序号（
+32
+）
+确认号（
+32
+）
+首部长度（
+4
+）
+保留（
+6
+）
+U
+R
+G
+A
+C
+K
+P
+S
+H
+R
+S
+T
+S
+Y
+N
+F
+--- slide6.xml ---
+TCP
+建立连接的过程称为三次握手
+TCP
+连接
+4-1
+PC1
+PC2
+1.
+发送
+SYN
+报文
+（
+Seq=x
+，
+SYN=1
+）
+2.
+发送
+SYN
+＋
+ACK
+报文
+（
+Seq=y
+，
+Ack=x+1
+，
+SYN=1
+，
+ACK
+＝
+1
+）
+3. 
+发送
+ACK
+报文
+（
+Seq=x+1
+，
+Ack=y+1
+，
+ACK=1
+）
+--- slide7.xml ---
+通过
+Sniffer
+抓包来分析三次握手的过程
+第一次握手
+第二次握手
+第三次握手
+TCP
+连接
+4-2
+SYN=1
+ACK=1
+SYN=1
+ACK=1
+--- slide8.xml ---
+TCP
+断开连接的四次握手
+TCP
+连接
+4-3
+   TCP
+半关闭
+的概念
+PC1
+PC2
+2. 
+发送
+ACK
+报文
+（
+ACK
+＝
+1
+）
+3. 
+发送
+FIN/ACK
+报文
+（
+FIN=1
+，
+ACK=1
+）
+4. 
+发送
+ACK
+报文
+（
+ACK
+＝
+1
+）
+ 1.
+发送
+FIN/ACK
+（
+FIN=1
+，
+ACK=1
+）
+此时，
+PC2
+能给
+PC1
+发送数据吗？
+--- slide9.xml ---
+常用的
+TCP
+端口号及其功能
+TCP
+连接
+4-4
+端口
+协议
+说　　明
+21
+FTP
+FTP
+服务器所开放的控制端口
+23
+TELNET
+用于远程登录，可以远程控制管理目标计算机
+25
+SMTP
+SMTP
+服务器开放的端口，用于发送邮件
+80
+HTTP
+超文本传输协议
+110
+POP3
+用于邮件的接收
+
